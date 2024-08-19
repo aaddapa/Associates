@@ -11,18 +11,19 @@
     <header>
         <nav>
             <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-            <ul id="nav-items">
-                <li><a href="#" data-target="home" onclick="navigateToSection(event)">Home</a></li>
-                <li><a href="#" data-target="resources" onclick="navigateToSection(event)">Resources</a></li>
-                <li><a href="#" data-target="services" onclick="navigateToSection(event)">Our Services</a></li>
-                <li><a href="#" data-target="contact" onclick="navigateToSection(event)">Contact Us</a></li>
-            </ul>
+            <div id="nav-menu" class="nav-menu">
+                <ul id="nav-items">
+                    <li><a href="#" data-target="home" onclick="navigateToSection(event)">Home</a></li>
+                    <li><a href="#" data-target="resources" onclick="navigateToSection(event)">Resources</a></li>
+                    <li><a href="#" data-target="services" onclick="navigateToSection(event)">Our Services</a></li>
+                    <li><a href="#" data-target="contact" onclick="navigateToSection(event)">Contact Us</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    
-
-    <section id="home">
+    <!-- Sections -->
+    <section id="home" class="active">
         <h2>Home Section</h2>
         <p>Welcome to the Home section.</p>
     </section>
@@ -42,25 +43,20 @@
         <p>You can reach us at the following:</p>
         <ul>
             <li><strong>Address:</strong> [Your Address]</li>
-            <li><strong>Phone:</strong>[Your Phone]</li>
+            <li><strong>Phone:</strong> [Your Phone]</li>
             <li><strong>Email:</strong> [Your Email]</li>
         </ul>
-        
         <h3>Email Inquiry</h3>
         <form id="contact-form">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
-    
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
-    
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="5" required></textarea><br><br>
-    
             <button type="submit">Send Inquiry</button>
         </form>
     </section>
-    
 
     <footer>
         <p>&copy; 2024 Your Company Name. All rights reserved.</p>
