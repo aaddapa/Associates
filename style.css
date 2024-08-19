@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #81b29a;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative; /* Added to position the menu icon */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px; /* Position the icon to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+}
+
+#nav-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+    flex: 1;
+    display: none; /* Hide sections by default */
+}
+
+section.active {
+    display: block; /* Display only the active section */
+}
+
+footer {
+    background-color: #81b29a;
+    color: white;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: auto;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+}
+
+#contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#contact-form button {
+    background-color: #81b29a;
+    color: white;
+    padding: 0.7em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#contact-form button:hover {
+    background-color: #678f7d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav-items.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        padding: 0.5em 0;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    #contact-form {
+        padding: 0.5em;
+    }
+}
