@@ -103,6 +103,18 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        min-height: 60px;  /* Ensure a consistent minimum height */
+        padding: 15px 20px;  /* Add sufficient padding for content */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-icon {
+        width: 25px;  /* Ensure the hamburger icon is proportionate */
+        height: 25px;
+    }
     .menu-icon {
         display: block;
     }
