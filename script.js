@@ -14,6 +14,8 @@ function toggleMenu() {
     }
 }
 
+
+
 function navigateToSection(event) {
     event.preventDefault();
     const targetSectionId = event.target.getAttribute('data-target');
@@ -31,15 +33,30 @@ function showSection(sectionId) {
     });
 
     const activeSection = document.getElementById(sectionId);
-    activeSection.classList.add('active');
+    if (activeSection) {
+        activeSection.classList.add('active');
+    }
 }
 
 function updateURL(sectionId) {
     history.pushState(null, null, `/${sectionId}`);
 }
 
-// On page load, display the correct section based on the URL
+// On page load, display the correct section or redirect to /home
 document.addEventListener('DOMContentLoaded', () => {
+    let sectionId = location.pathname.replace('/', '');
+    
+    // If no section specified, default to 'home'
+    if (!sectionId || sectionId === 'index.html') {
+        sectionId = 'home';
+        history.replaceState(null, null, `/home`);
+    }
+    
+    showSection(sectionId);
+});
+
+// Handle back/forward navigation
+window.addEventListener('popstate', () => {
     const sectionId = location.pathname.replace('/', '') || 'home';
     showSection(sectionId);
 });
