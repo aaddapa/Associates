@@ -10,17 +10,29 @@ body {
 }
 
 header {
-    background-color: #81b29a; /* Header background color */
-    color: white;
+    background-color: white; /* Updated header background to white */
+    color: black; /* Updated text color to black */
     padding: 2em 0; /* Increased padding for larger header */
     text-align: center;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow below the header */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    background: url('images/logo.jpg') no-repeat left center;
+    background-size: contain; /* Ensure logo height matches the header */
 }
 
 .menu-icon {
     font-size: 2em;
     cursor: pointer;
-    color: white;
+    color: black; /* Updated menu icon color to match header text */
     position: absolute;
     right: 20px;
     top: 50%;
@@ -37,8 +49,8 @@ header {
     right: -250px; /* Start off-screen */
     width: 250px;
     height: 100%;
-    background-color: rgba(129, 178, 154, 0.8); /* Transparent background with header color tint */
-    color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* Updated transparent white background */
+    color: black; /* Updated text color to black */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +58,6 @@ header {
     z-index: 999; /* Ensures it stays above other content */
     backdrop-filter: blur(5px); /* Optional: adds a blur effect for a modern look */
     -webkit-backdrop-filter: blur(5px); /* WebKit-specific blur for better compatibility */
-
 }
 
 .nav-menu.show {
@@ -67,18 +78,17 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black; /* Updated links to black */
     text-decoration: none;
     font-size: 1.2em;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
-
 @media (max-width: 768px) {
     nav ul li a:hover {
         text-decoration: underline; /* Underline on hover */
-        text-decoration-color: #81b29a; /* Underline color matches the header background */
+        text-decoration-color: black; /* Updated underline color to match new text color */
     }
 }
 
@@ -87,6 +97,8 @@ section {
     text-align: center;
     flex: 1;
     display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow above footer */
+    background-color: #f3f2ef; /* Updated background to the specified color */
 }
 
 section.active {
@@ -94,11 +106,12 @@ section.active {
 }
 
 footer {
-    background-color: #81b29a;
-    color: white;
+    background-color: white; /* Updated footer background to white */
+    color: black; /* Updated footer text color to black */
     text-align: center;
     font-size: 0.9em;
     margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Added shadow above footer */
 }
 
 #contact ul {
@@ -185,7 +198,7 @@ footer {
 
     nav ul li a:hover {
         text-decoration: underline; /* Underline on hover */
-        text-decoration-color: #81b29a; /* Underline color matches the header background */
+        text-decoration-color: black; /* Updated underline color */
     }
 
     section {
