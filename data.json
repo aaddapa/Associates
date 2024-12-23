@@ -1,0 +1,863 @@
+{
+    "data": [
+    
+        {
+            "id": "january-2025",
+            "month": "January 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "7 Jan 2025",
+                "category": "Annual Tax Returns",
+                "description": "<ul><li>Due date for annual tax returns for taxpayers (without a tax agent) that have a September balance date<ul><li>Income tax return</li><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "Terminal Tax",
+                "description": "<ul><li>For taxpayers (without a tax agent) with a February balance date</li><li>For taxpayers (with a tax agent) with a December balance date</li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "GST",
+                "description": "Return and payment are due for the period ended 30 November"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (July balance date)</li><li>2nd instalment (March balance date)</li><li>3rd instalment (November balance date)</li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "FBT",
+                "description": "<ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (with a tax agent) with a December balance date <strong>(if payable on income year basis)</strong></li><li>FBT return <strong>(IR421)</strong> and payment due for employers (without a tax agent) with a February balance date <strong>(if payable on income year basis)</strong></li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "<ul><li>For those (with no tax agent) with a February balance date</li><li>For those (with a tax agent) with a December balance date</li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (September balance date)</li><li>2nd instalment (July balance date)</li><li>3rd instalment (May balance date)</li><li>4th instalment (March balance date)</li><li>5th instalment (January balance date)</li><li>6th instalment (November balance date)</li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 December to 31 December</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "15 Jan 2025",
+                "category": "Provisional Tax - Six Monthly GST Filing",
+                "description": "<ul><li>1st instalment (May balance date)</li><li>2nd instalment (November balance date)</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "Gaming Machine Duty",
+                "description": "<p></p><ul><li>Return <strong>(IR680)</strong> and payment due for the month ended 31 December</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "PAYE",
+                "description": "<p></p><ul><li>Payment due for <strong>small employers</strong> for the period 1 December to 31 December</li><li>Payment due for <strong>large employers</strong> for the period 1 January to 15 January</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "RWT",
+                "description": "<p></p><ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during December</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "FBT",
+                "description": "<p></p><ul><li>FBT return <strong>(IR420)</strong> and payment due for employers for the quarter ending 31 December (if completed on a <strong>quarterly basis</strong>)</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "Foreign Dividend Withholding Payment",
+                "description": "<p></p><ul><li><strong>IR4F</strong> return and payment due for foreign dividends received in the quarter ending 31 December</li></ul>"
+              },
+              {
+                "date": "20 Jan 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "<p></p><ul><li>Payment and Return due for either preceding month's Non-Resident Withholding Tax or Approved Issuer Levy</li></ul>"
+              },
+              {
+                "date": "28 Jan 2025",
+                "category": "Provisional Tax - Six Monthly GST Filing",
+                "description": "<p></p><ul><li>1st instalment (June balance date)</li><li>2nd instalment (December balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jan 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<p></p><ul><li>1st instalment (October balance date)</li><li>2nd instalment (August balance date)</li><li>3rd instalment (June balance date)</li><li>4th instalment (April balance date)</li><li>5th instalment (February balance date)</li><li>6th instalment (December balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jan 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and /or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<p></p><ul><li>1st instalment (August balance date)</li><li>2nd instalment (April balance date)</li><li>3rd instalment (December balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jan 2025",
+                "category": "GST",
+                "description": "<p></p><ul><li>Return and payment due for the period ended 31 December</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "february-2025",
+            "month": "February 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 Feb 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 January to 31 January</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Feb 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "<ul><li>For those (with no tax agent) with balance date between 1 March and 30 September</li><li>For those (with a tax agent) with a January balance date</li></ul>"
+              },
+              {
+                "date": "7 Feb 2025",
+                "category": "FBT",
+                "description": "<ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (without a tax agent) with balance dates between 1 March &amp; 30 September (if payable on <strong>income year basis</strong>)</li><li>FBT return <strong>(IR421)</strong> and payment due for employers (with a tax agent) with a January balance date (if payable on <strong>income year</strong></li><li><strong> basis</strong>)</li></ul>"
+              },
+              {
+                "date": "7 Feb 2025",
+                "category": "Terminal Tax",
+                "description": "<ul><li>For taxpayers (without a tax agent) with balance dates between 1 March and 30 September</li><li>For taxpayers (with a tax agent) with a January balance date</li></ul>"
+              },
+              {
+                "date": "20 Feb 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for month ended 31 January"
+              },
+              {
+                "date": "20 Feb 2025",
+                "category": "RWT",
+                "description": "RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during January"
+              },
+              {
+                "date": "20 Feb 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding months' Non Resident Withholding Tax or Approved Issuer Levy"
+              },
+              {
+                "date": "20 Feb 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 January to 31 January</li><li>Payment due for <strong>large employers</strong> for the period 1 February to 15 February</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "28 Feb 2025",
+                "category": "GST",
+                "description": "<ul><li>Return and payment due for the period ended 31 January</li></ul><p></p>"
+              },
+              {
+                "date": "28 Feb 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and /or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st Instalment (September balance date)</li><li>2nd Instalment (May balance date)</li><li>3rd Instalment (January balance date)</li></ul>"
+              },
+              {
+                "date": "28 Feb 2025",
+                "category": "Provisional Tax - Six Monthly GST Filing",
+                "description": "<ul><li>1st Instalment (July balance date)</li><li>2nd Instalment (January balance date)</li></ul>"
+              },
+              {
+                "date": "28 Feb 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st Instalment (November balance date)</li><li>2nd Instalment (September balance date)</li><li>3rd Instalment (July balance date)</li><li>4th Instalment (May balance date)</li><li>5th Instalment (March balance date)</li><li>6th Instalment (January balance date)</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "march-2025",
+            "month": "March 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 Mar 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 February to 28 February</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Mar 2025",
+                "category": "Terminal Tax",
+                "description": "For taxpayers (with a tax agent) with a February balance date"
+              },
+              {
+                "date": "7 Mar 2025",
+                "category": "FBT",
+                "description": "FBT return <strong>(IR421)</strong> and payment due for employers (with a tax agent) with a February balance date<strong> (if payable on income year basis)</strong>"
+              },
+              {
+                "date": "7 Mar 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "For those (with a tax agent) with a February balance date"
+              },
+              {
+                "date": "20 Mar 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding months' Non Resident Withholding Tax or Approved Issuer levy"
+              },
+              {
+                "date": "20 Mar 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 February to 28 February</li><li>Payment due for <strong>large employers</strong> for the period 1 March to 15 March</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "20 Mar 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for the month ended 28 February"
+              },
+              {
+                "date": "20 Mar 2025",
+                "category": "RWT",
+                "description": "RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during February"
+              },
+              {
+                "date": "28 Mar 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (October balance date)</li><li>2nd instalment (June balance date)</li><li>3rd instalment (February balance date)</li></ul>"
+              },
+              {
+                "date": "28 Mar 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (December balance date)</li><li>2nd instalment (October balance date)</li><li>3rd instalment (August balance date)</li><li>4th instalment (June balance date)</li><li>5th instalment (April balance date)</li><li>6th instalment (February balance date)</li></ul>"
+              },
+              {
+                "date": "28 Mar 2025",
+                "category": "GST",
+                "description": "<p>Return and payment are due for the period ended 28 February</p>"
+              },
+              {
+                "date": "28 Mar 2025",
+                "category": "Provisional Tax - Six Monthly GST Filing",
+                "description": "<ul><li>1st instalment (August balance date)</li><li>2nd instalment (February balance date)</li></ul>"
+              },
+              {
+                "date": "31 Mar 2025",
+                "category": "Imputation Year",
+                "description": "<ul><li>Final day of imputation year. 10% penalty incurred on debit balance in imputation account and dividend withholding payment account after this date </li><li>Final day for refund of excess RWT deductions</li></ul>"
+              },
+              {
+                "date": "31 Mar 2025",
+                "category": "Student Loan",
+                "description": "2nd Repayment Instalment due for borrowers who are overseas"
+              },
+              {
+                "date": "31 Mar 2025",
+                "category": "Tax Returns",
+                "description": "Final day to file tax returns for taxpayers with a tax agent"
+              }
+            ]
+          },
+          {
+            "id": "april-2025",
+            "month": "April 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "7 Apr 2025",
+                "category": "FBT",
+                "description": "<p></p><ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (with a tax agent) with balance dates between 1 March &amp; 30 September (if payable <strong>on income year basis</strong>)</li></ul>"
+              },
+              {
+                "date": "7 Apr 2025",
+                "category": "PAYE",
+                "description": "<p>(as the 5th falls on a weekend)</p><ul><li>Payment due for <strong>large employers</strong> for the period 16 March to 31 March</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Apr 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "For those (with a tax agent) with balance dates between 1 March and 30 September"
+              },
+              {
+                "date": "7 Apr 2025",
+                "category": "Terminal Tax",
+                "description": "For taxpayers (with a tax agent) with balance dates between 1 March and 30 September"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Payment and Return due for either preceding months' Non Resident Withholding Tax or Approved Issuer Levy</li></ul>"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "Foreign Dividend Withholding Payment",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li><strong>IR4F</strong> return and payment due for foreign dividends received in the quarter ending 31 March</li></ul>"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "PAYE",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Payment due for <strong>small employers</strong> for the period 1 March to 31 March</li><li>Payment due for <strong>large employers</strong> for the period 1 April to 15 April</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "RWT",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during March</li><li>RWT Return and payment due for interest payments made from 1 October to 31 March where the deductions <strong>do not exceed</strong> $500 per month</li></ul>"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "Approved Issuer Levy",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Return and payment due for approved issuer levy made in period between 1 October and 31 March where estimations of the deductions of the levy <strong>will not exceed $500 per month</strong></li></ul>"
+              },
+              {
+                "date": "21 Apr 2025",
+                "category": "Gaming Machine Duty",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Return <strong>(IR680)</strong> and payment due for the month ended 31 March</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "may-2025",
+            "month": "May 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 May 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 April to 30 April</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 May 2025",
+                "category": "GST",
+                "description": "Return and payment due for period ended 31 March"
+              },
+              {
+                "date": "7 May 2025",
+                "category": "Provisional Tax - Six Monthly GST Filing",
+                "description": "<ul><li>1st instalment (September balance date)</li><li>2nd instalment (March balance date)</li></ul>"
+              },
+              {
+                "date": "7 May 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (January balance date)</li><li>2nd instalment (November balance date)</li><li>3rd instalment (September balance date)</li><li>4th instalment (July balance date)</li><li>5th instalment (May balance date)</li><li>6th instalment (March balance date)</li></ul>"
+              },
+              {
+                "date": "7 May 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (November balance date)</li><li>2nd instalment (July balance date)</li><li>3rd instalment (March balance date)</li></ul>"
+              },
+              {
+                "date": "20 May 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding months' Non Resident Withholding Tax or Approved Issuer Levy"
+              },
+              {
+                "date": "20 May 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for the month ended 30 April"
+              },
+              {
+                "date": "20 May 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 April to 30 April</li><li>Payment due for <strong>large employers</strong> for the period 1 May to 15 May</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "20 May 2025",
+                "category": "RWT",
+                "description": "RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during April"
+              },
+              {
+                "date": "28 May 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (December balance date)</li><li>2nd instalment (August balance date)</li><li>3rd instalment (April balance date)</li></ul>"
+              },
+              {
+                "date": "28 May 2025",
+                "category": "GST",
+                "description": "Return and payment due for the period ended 30 April"
+              },
+              {
+                "date": "28 May 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<ul><li>1st instalment (October balance date)</li><li>2nd instalment (April balance date)</li></ul>"
+              },
+              {
+                "date": "28 May 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (February balance date)</li><li>2nd instalment (December balance date)</li><li>3rd instalment (October balance date)</li><li>4th instalment (August balance date)</li><li>5th instalment (June balance date)</li><li>6th instalment (April balance date)</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "june-2025",
+            "month": "June 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "3 Jun 2025",
+                "category": "RWT",
+                "description": "<p>As 31 May falls on a weekend and 2 June is King's Birthday</p><ul><li>Annual reconciliation statements (<strong>IR15S,</strong> interest and <strong>IR17S</strong> or <strong>17SA</strong>) due for the year ended 31 March</li></ul>"
+              },
+              {
+                "date": "3 Jun 2025",
+                "category": "FBT",
+                "description": "<p>(as 31 May falls on a weekend and 2 June is King's Birthday)</p><ul><li>FBT return <strong>(IR420)</strong> and payment due for employers for the quarter ending 31 March (if completed on a <strong>quarterly basis</strong>)</li><li>FBT return <strong>(IR422)</strong> and payment due for employers for the year ended 31 March (If completed on an <strong>annual basis</strong>). Employers who provide no fringe benefits are to file an annual Nil return <strong>(IR419)</strong>, unless the CIR has waived this requirement</li></ul>"
+              },
+              {
+                "date": "5 Jun 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 May to 31 May</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "Dividend Withholding Payment",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>Where a dividend withholding payment account company has a debit balance as at 31 March, a further dividend withholding payment and dividend payment penalty is now due and payable</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "RWT",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during May</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>Payment and return due for either preceding month's Non-Resident Withholding Tax or Approved Issuer Levy</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "PAYE",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>Payment due for <strong>small employers</strong> for the period 1 May to 31 May</li><li>Payment due for <strong>large employers</strong> for the period 1 June to 15 June</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "Gaming Machine Duty",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>Return <strong>(IR680)</strong> and payment due for the month ended 31 May</li></ul>"
+              },
+              {
+                "date": "23 Jun 2025",
+                "category": "Imputation penalty tax",
+                "description": "<p>(as 20 June falls on Matariki and 21-22 June fall on the weekend)</p><ul><li>Where an imputation credit account company has a debit balance at 31 March, further income tax and imputation penalty is now due and payable</li></ul>"
+              },
+              {
+                "date": "30 Jun 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<p>(as 28 June falls on a weekend)</p><ul><li>1st instalment (November balance date)</li><li>2nd instalment (May balance date)</li></ul>"
+              },
+              {
+                "date": "30 Jun 2025",
+                "category": "GST",
+                "description": "<p>(as 28 June falls on a weekend)</p><ul><li>Return and payment due for the period ended 31 May</li></ul>"
+              },
+              {
+                "date": "30 Jun 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<p>(as 28 June falls on a weekend)</p><ul><li>1st instalment (January balance date)</li><li>2nd instalment (September balance date)</li><li>3rd instalment (May balance date)</li></ul>"
+              },
+              {
+                "date": "30 Jun 2025",
+                "category": "FBT",
+                "description": "Last date for employers to elect to pay FBT annually"
+              },
+              {
+                "date": "30 Jun 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<p>(as 28 June falls on a weekend)</p><ul><li>1st instalment (March balance date)</li><li>2nd instalment (January balance date)</li><li>3rd instalment (November balance date)</li><li>4th instalment (September balance date)</li><li>5th instalment (July balance date)</li><li>6th instalment (May balance date)</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "july-2025",
+            "month": "July 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "1 Jul 2025",
+                "category": "GST",
+                "description": "<p>(as 28 June falls on Matariki)</p><ul><li>Return and payment due for the period ended 31 May</li></ul>"
+              },
+              {
+                "date": "1 Jul 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<p>(as 28 June falls on Matariki)</p><ul><li>1st instalment (November balance date)</li><li>2nd instalment (May balance date)</li></ul>"
+              },
+              {
+                "date": "1 Jul 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<p>(as 28 June falls on Matariki)</p><ul><li>1st instalment (March balance date)</li><li>2nd instalment (January balance date)</li><li>3rd instalment (November balance date)</li><li>4th instalment (September balance date)</li><li>5th instalment (July balance date)</li><li>6th instalment (May balance date)</li></ul>"
+              },
+              {
+                "date": "1 Jul 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<p>(as 28 June falls on Matariki)</p><ul><li>1st instalment (January balance date)</li><li>2nd instalment (September balance date)</li><li>3rd instalment (May balance date)</li></ul>"
+              },
+              {
+                "date": "1 Jul 2025",
+                "category": "FBT",
+                "description": "<p>(as 30 June falls on a weekend)</p><ul><li>Last date for employers to elect to pay FBT annually</li></ul>"
+              },
+              {
+                "date": "7 Jul 2025",
+                "category": "PAYE",
+                "description": "<p>(as 5 July falls on a weekend)</p><ul><li>Payment due for <strong>large employers</strong> for the period 16 June to 30 June</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Jul 2025",
+                "category": "Annual Returns",
+                "description": "<ul><li>Last day for taxpayers (without a tax agent) with balance dates 1 October and 31 March to also file:<ul><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "7 Jul 2025",
+                "category": "Income Tax Returns",
+                "description": "<ul><li>Tax returns for the year ended 31 March are to be filed by taxpayers (without a tax agent) with balance dates between 1 October and 31 March:<ul><li>Individuals <strong>(IR3)</strong></li><li>Companies &amp; Unit Trusts <strong>(IR4)</strong></li><li>Estates or Trusts <strong>(IR6)</strong></li><li>Partnerships <strong>(IR7)</strong></li><li>Clubs &amp; Societies <strong>(IR9)</strong></li><li>Superannuation Funds (<strong>IR44</strong>)</li></ul></li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "Gaming Machine Duty",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li>Return <strong>(IR680)</strong> and payment due for the month ended 30 June</li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "FBT",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li>FBT return <strong>(IR420)</strong> and payment due for employers for the quarter ending 30 June (if completed on a <strong>quarterly basis</strong>)</li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "RWT",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during June</li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "PAYE",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li>Payment due for <strong>small employers</strong> for the period 1 June to 30 June</li><li>Payment due for <strong>large employers</strong> for the period 1 July to 15 July</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "Foreign Dividend Withholding Payment",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li><strong>IR4F</strong> return and payment due for foreign dividends received in the quarter ending 30 June</li></ul>"
+              },
+              {
+                "date": "21 Jul 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "<p>(as 20th falls on a weekend)</p><ul><li>Payment and Return due for either preceding months' Non-Resident Withholding Tax or Approved Issuer Levy</li></ul>"
+              },
+              {
+                "date": "28 Jul 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (February balance date)</li><li>2nd instalment (October balance date)</li><li>3rd instalment (June balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jul 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<ul><li>1st instalment (December balance date)</li><li>2nd instalment (June balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jul 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (April balance date)</li><li>2nd instalment (February balance date)</li><li>3rd instalment (December balance date)</li><li>4th instalment (October balance date)</li><li>5th instalment (August balance date)</li><li>6th instalment (June balance date)</li></ul>"
+              },
+              {
+                "date": "28 Jul 2025",
+                "category": "GST",
+                "description": "Return and payment due for the period ended 30 June"
+              }
+            ]
+          },
+          {
+            "id": "august-2025",
+            "month": "August 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 Aug 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 July to 31 July</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Aug 2025",
+                "category": "Annual Tax Returns",
+                "description": "<p>Due date for annual tax returns for taxpayers (without a tax agent) that have an April balance date</p><ul><li><ul><li>Income tax return</li><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "20 Aug 2025",
+                "category": "RWT",
+                "description": "RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during July"
+              },
+              {
+                "date": "20 Aug 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding months' Non-Resident Withholding Tax or Approved Issuer Levy"
+              },
+              {
+                "date": "20 Aug 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 July to 31 July</li><li>Payment due for <strong>large employers</strong> for the period 1 August to 15 August</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "20 Aug 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for the month ended 31 July"
+              },
+              {
+                "date": "28 Aug 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (May balance date)</li><li>2nd instalment (March balance date)</li><li>3rd instalment (January balance date)</li><li>4th instalment (November balance date)</li><li>5th instalment (September balance date)</li><li>6th instalment (July balance date)</li></ul>"
+              },
+              {
+                "date": "28 Aug 2025",
+                "category": "GST",
+                "description": "Return and payment due for period ended 31 July"
+              },
+              {
+                "date": "28 Aug 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (March balance date)</li><li>2nd instalment (November balance date)</li><li>3rd instalment (July balance date)</li></ul>"
+              },
+              {
+                "date": "28 Aug 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<ul><li>1st instalment (January balance date)</li><li>2nd instalment (July balance date)</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "september-2025",
+            "month": "September 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 Sep 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>large employers</strong> for the period 16 August to 31 August</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "8 Sep 2025",
+                "category": "Terminal Tax",
+                "description": "<p>(as the 7th falls on a weekend)</p><ul><li>For taxpayers (without a tax agent) with an October balance date</li></ul>"
+              },
+              {
+                "date": "8 Sep 2025",
+                "category": "Annual Tax Returns",
+                "description": "<p>(as the 7th falls on a weekend)</p><ul><li>Due date for annual tax returns for taxpayers (without a tax agent) that have a May balance date<ul><li>Income tax return</li><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "8 Sep 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "<p>(as the 7th falls on a weekend)</p><ul><li>For those (without a tax agent) with an October balance date</li></ul>"
+              },
+              {
+                "date": "8 Sep 2025",
+                "category": "FBT",
+                "description": "<p>(as the 7th falls on a weekend)</p><ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (without a tax agent) with an October balance date (if payable on <strong>income year basis</strong>)</li></ul>"
+              },
+              {
+                "date": "22 Sep 2025",
+                "category": "RWT",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during August</li></ul>"
+              },
+              {
+                "date": "22 Sep 2025",
+                "category": "Gaming Machine Duty",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Return <strong>(IR680)</strong> and payment due for month ended 31 August</li></ul>"
+              },
+              {
+                "date": "22 Sep 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Payment and Return due for either preceding months' Non-Resident Withholding Tax or Approved Issuer Levy</li></ul>"
+              },
+              {
+                "date": "22 Sep 2025",
+                "category": "PAYE",
+                "description": "<p>(as the 20th falls on a weekend)</p><ul><li>Payment due for <strong>small employers</strong> for the period 1 August to 31 August</li><li>Payment due for <strong>large employers</strong> for the period 1 September to 15 September</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "29 Sep 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<p>(as the 28th falls on a weekend)</p><ul><li>1st instalment (June balance date)</li><li>2nd instalment (April balance date)</li><li>3rd instalment (February balance date)</li><li>4th instalment (December balance date)</li><li>5th instalment (October balance date)</li><li>6th instalment (August balance date)</li></ul>"
+              },
+              {
+                "date": "29 Sep 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<p>(as the 28th falls on a weekend)</p><ul><li>1st instalment (February balance date)</li><li>2nd instalment (August balance date)</li></ul>"
+              },
+              {
+                "date": "29 Sep 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<p>(as the 28th falls on a weekend)</p><ul><li>1st instalment (April balance date)</li><li>2nd instalment (December balance date)</li><li>3rd instalment (August balance date)</li></ul>"
+              },
+              {
+                "date": "29 Sep 2025",
+                "category": "GST",
+                "description": "<p>(as the 28th falls on a weekend)</p><ul><li>Return and payment due for period ended 31 August</li></ul>"
+              },
+              {
+                "date": "30 Sep 2025",
+                "category": "Student Loan",
+                "description": "<ul><li>1st repayment Instalment due for borrowers who are overseas</li></ul><p></p>"
+              }
+            ]
+          },
+          {
+            "id": "october-2025",
+            "month": "October 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "6 Oct 2025",
+                "category": "PAYE",
+                "description": "<p>(as the 5th falls on a weekend)</p><ul><li>Payment due for <strong>large employers</strong> for the period 16 September to 30 September</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Oct 2025",
+                "category": "Annual Tax Returns",
+                "description": "<p></p><ul><li>Due date for annual tax returns for taxpayers (without a tax agent) that have a June balance date<ul><li>Income tax return</li><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student Loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "7 Oct 2025",
+                "category": "FBT",
+                "description": "<p></p><ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (without a tax agent) with a November balance date (if payable on <strong>income year basis</strong>)</li></ul>"
+              },
+              {
+                "date": "7 Oct 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "<p></p><ul><li>For those (without a tax agent) with a November balance date</li></ul>"
+              },
+              {
+                "date": "7 Oct 2025",
+                "category": "Terminal Tax",
+                "description": "<p></p><ul><li>For taxpayers (without a tax agent) with a November balance date</li></ul>"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for month ended 30 September"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "RWT",
+                "description": "<ul><li>RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during September</li><li>RWT Return and payment due for interest payments made between 1 April and 30 September where deductions <strong>do not exceed $500</strong> per month</li></ul>"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "FBT",
+                "description": "FBT return <strong>(IR420)</strong> and payment due for employers for the quarter ending 30 September (if completed on a <strong>quarterly basis</strong>)"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "Approved Issuer Levy",
+                "description": "Return and payment due for Approved Issuer Levy made in period between 1 April and 30 September where estimations of the deductions of the levy <strong>will not exceed $500</strong>"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding month's Non-Resident Withholding Tax or Approved Issuer Levy"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "Foreign Dividend Withholding Payment",
+                "description": "<strong>IR4F</strong> return and payment due for foreign dividends received in the quarter ending 30 September"
+              },
+              {
+                "date": "20 Oct 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 September to 30 September</li><li>Payment due for <strong>large employers</strong> for the period 1 October to 15 October</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "28 Oct 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<ul><li>1st instalment (March balance date)</li><li>2nd instalment (September balance date)</li></ul>"
+              },
+              {
+                "date": "28 Oct 2025",
+                "category": "Provisional Tax - Ratio Option",
+                "description": "<ul><li>1st instalment (July balance date)</li><li>2nd instalment (May balance date)</li><li>3rd instalment (March balance date)</li><li>4th instalment (January balance date)</li><li>5th instalment (November balance date)</li><li>6th instalment (September balance date)</li></ul>"
+              },
+              {
+                "date": "28 Oct 2025",
+                "category": "GST",
+                "description": "Return and payment are due for the period ended 30 September"
+              },
+              {
+                "date": "28 Oct 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (May balance date)</li><li>2nd instalment (January balance date)</li><li>3rd instalment (September balance date)</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "november-2025",
+            "month": "November 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": [
+              {
+                "date": "5 Nov 2025",
+                "category": "PAYE",
+                "description": "<p></p><ul><li>Payment due for <strong>large employers</strong> for the period 16 October to 31 October</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "7 Nov 2025",
+                "category": "Terminal Student Loan Repayment",
+                "description": "<ul><li>For those (without a tax agent) with a December balance date</li><li>For those (with tax agent) with an October balance date</li></ul>"
+              },
+              {
+                "date": "7 Nov 2025",
+                "category": "Terminal Tax",
+                "description": "<ul><li>For taxpayers (without a tax agent) with a December balance date</li><li>For taxpayers (with tax agent) with an October balance date</li></ul>"
+              },
+              {
+                "date": "7 Nov 2025",
+                "category": "Annual Tax Returns",
+                "description": "<ul><li>Due date for annual tax returns for taxpayers (without a tax agent) that have a July balance date<ul><li>Income tax return</li><li>Imputation return</li><li>Dividend withholding payment return</li><li>Branch equivalent tax account return</li><li>Policyholder credit account return</li><li>Company dividend statement</li><li>Student Loan form SL9</li></ul></li></ul>"
+              },
+              {
+                "date": "7 Nov 2025",
+                "category": "FBT",
+                "description": "<ul><li>FBT return <strong>(IR421)</strong> and payment due for employers (with a tax agent) with an October balance date (if payable on <strong>income year basis</strong>)</li><li>FBT return <strong>(IR421)</strong> and payment due for employers (without a tax agent) with a December balance date (if payable on <strong>income year basis</strong>)</li></ul>"
+              },
+              {
+                "date": "20 Nov 2025",
+                "category": "N-RWT / Approved Issuer Levy",
+                "description": "Payment and Return due for either preceding months' Non-Resident Withholding Tax or Approved Issuer Levy"
+              },
+              {
+                "date": "20 Nov 2025",
+                "category": "RWT",
+                "description": "RWT Return and payment due for deductions from dividends and deductions of $500 or more from interest paid during October"
+              },
+              {
+                "date": "20 Nov 2025",
+                "category": "Gaming Machine Duty",
+                "description": "Return <strong>(IR680)</strong> and payment due for the month ended 31 October"
+              },
+              {
+                "date": "20 Nov 2025",
+                "category": "PAYE",
+                "description": "<ul><li>Payment due for <strong>small employers</strong> for the period 1 October to 31 October</li><li>Payment due for <strong>large employers</strong> for the period 1 November to 15 November</li><li>File employment information within 2 working days after payday</li></ul>"
+              },
+              {
+                "date": "28 Nov 2025",
+                "category": "Provisional Tax Ratio Option",
+                "description": "<ul><li>1st instalment (August balance date)</li><li>2nd instalment (June balance date)</li><li>3rd instalment (April balance date)</li><li>4th instalment (February balance date)</li><li>5th instalment (December balance date)</li><li>6th instalment (October balance date)</li></ul>"
+              },
+              {
+                "date": "28 Nov 2025",
+                "category": "GST",
+                "description": "Return and payment due for period ended 31 October"
+              },
+              {
+                "date": "28 Nov 2025",
+                "category": "Provisional Tax - Six monthly GST filing",
+                "description": "<ul><li>1st instalment (April balance date)</li><li>2nd instalment (October balance date)</li></ul>"
+              },
+              {
+                "date": "28 Nov 2025",
+                "category": "Provisional Tax - Standard or Estimation Option and/or 1 or 2 monthly GST filing & Student Loan Interim Payments",
+                "description": "<ul><li>1st instalment (June balance date)</li><li>2nd instalment (February balance date)</li><li>3rd instalment (October balance date)</li></ul>"
+              }
+            ]
+          }
+    ]
+    }

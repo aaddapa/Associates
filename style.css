@@ -85,6 +85,46 @@ nav ul li a {
     transition: all 0.3s ease-in-out;
 }
 
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* Show Dropdown Menu on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f3f3f3;
+}
+
 @media (max-width: 768px) {
     nav ul li a:hover {
         text-decoration: underline; /* Underline on hover */
@@ -122,6 +162,87 @@ footer {
 #contact ul li {
     margin-bottom: 10px;
 }
+/* Month card style */
+.month-card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.month-card:hover {
+    transform: scale(1.05);
+    background-color: #f1f1f1;
+}
+
+/* Back button style */
+.back-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles remain the same as before */
+.key-dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed;
+}
+
+.key-dates-table th,
+.key-dates-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.key-dates-table th:nth-child(1),
+.key-dates-table td:nth-child(1) { /* Date column */
+    width: 15%;
+    white-space: nowrap;
+}
+
+.key-dates-table th:nth-child(2),
+.key-dates-table td:nth-child(2) { /* Category column */
+    width: 25%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.key-dates-table th:nth-child(3),
+.key-dates-table td:nth-child(3) { /* Description column */
+    width: 60%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.key-dates-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
 
 #contact-form {
     max-width: 400px;

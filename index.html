@@ -15,7 +15,13 @@
             <div id="nav-menu" class="nav-menu">
                 <ul id="nav-items">
                     <li><a href="#" data-target="home" onclick="navigateToSection(event)">Home</a></li>
-                    <li><a href="#" data-target="resources" onclick="navigateToSection(event)">Resources</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-target="resources" onclick="navigateToSection(event)">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-target="key-dates" onclick="navigateToSection(event)">Key Dates</a></li>
+                            <li><a href="#" data-target="calculators" onclick="navigateToSection(event)">Calculators</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#" data-target="services" onclick="navigateToSection(event)">Our Services</a></li>
                     <li><a href="#" data-target="contact" onclick="navigateToSection(event)">Contact Us</a></li>
                 </ul>
@@ -23,23 +29,42 @@
         </nav>
     </header>
 
-    <!-- Sections -->
     <section id="home" class="active">
         <h2>Home</h2>
         <p>Information about Home.</p>
     </section>
 
-    <section id="resources">
+    <section id="resources" class="hidden">
         <h2>Resources</h2>
         <p>Information about Resources.</p>
     </section>
 
-    <section id="services">
+    <section id="key-dates" class="hidden">
+        <h2>Key Dates</h2>
+        <!-- Content will be dynamically populated -->
+    </section>
+    
+
+    <section id="calculators" class="hidden">
+        <h2>Calculators</h2>
+        <form id="calculator-form">
+            <label for="number1">Enter first number:</label>
+            <input type="number" id="number1" required><br><br>
+
+            <label for="number2">Enter second number:</label>
+            <input type="number" id="number2" required><br><br>
+
+            <button type="button" onclick="performCalculation()">Calculate</button>
+        </form>
+        <p id="calculation-result"></p>
+    </section>
+
+    <section id="services" class="hidden">
         <h2>Our Services</h2>
         <p>Details about the services offered.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="hidden">
         <h2>Contact Us</h2>
         <p>You can reach us at the following:</p>
         <ul>
@@ -47,16 +72,6 @@
             <li><strong>Phone:</strong> [Your Phone]</li>
             <li><strong>Email:</strong> [Your Email]</li>
         </ul>
-        <h3>Email Inquiry</h3>
-        <form id="contact-form">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br><br>
-            <button type="submit">Send Inquiry</button>
-        </form>
     </section>
 
     <footer>
@@ -64,4 +79,3 @@
     </footer>
 </body>
 </html>
-
