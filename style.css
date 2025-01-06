@@ -154,14 +154,121 @@ footer {
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Added shadow above footer */
 }
 
+#contact {
+    background: linear-gradient(to bottom, #f4f4f4, #ffffff);
+    padding: 4em 2em;
+}
+
+.contact-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Control width of the contact card */
+    margin: 0 auto; /* Center the contact card */
+}
+
+iframe {
+    max-width: 600px; /* Match width of contact section */
+    width: 100%; /* Make it responsive */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a polished look */
+    margin: 20px auto 0; /* Add space above the iframe */
+    display: block;
+}
+
+.contact-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-card li {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: flex-start; /* Align icon and text properly */
+    gap: 10px; /* Add gap between icon and content */
+}
+
+.contact-card li i {
+    font-size: 1.5em; /* Reduced icon size */
+    margin-top: 2px; /* Slight adjustment for vertical alignment */
+    color: #0056b3; /* Retain color for consistency */
+}
+
+.contact-card li span {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card li span strong {
+    font-weight: bold;
+    margin-bottom: 2px; /* Reduce space between label and content */
+}
+
+.contact-card li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1em; /* Slightly increase font size for readability */
+    transition: color 0.3s ease;
+}
+
+.contact-card li a:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+}
+
 #contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 400px; /* Limit the width for better alignment */
+}
+
+#contact ul li {
+    margin-bottom: 15px; /* Add spacing between each item */
+    font-size: 1em;
+    line-height: 1.5; /* Improve readability */
+}
+
+.open-hours {
+    margin-top: 20px;
+    padding: 1.5em;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.open-hours h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.open-hours ul {
     list-style: none;
     padding: 0;
 }
 
-#contact ul li {
+.open-hours ul li {
+    font-size: 1.2em;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
+
+.open-hours ul li strong {
+    color: #0056b3;
+}
+
 /* Month card style */
 .month-card {
     display: inline-block;
