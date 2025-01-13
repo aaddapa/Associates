@@ -105,6 +105,46 @@ nav ul li a {
     min-width: 150px;
 }
 
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    text-align: center;
+}
+
+.calculator-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-item i {
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.calculator-item p {
+    font-size: 1em;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.calculator-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Show Dropdown Menu on Hover */
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -245,6 +285,64 @@ iframe {
     margin-right: auto;
     text-align: left;
 }
+
+#gst-calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#gst-calculator form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#gst-calculator label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#gst-calculator input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button-group button:hover {
+    background: #357abd;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
 
 .open-hours h3 {
     font-family: 'Georgia', serif;

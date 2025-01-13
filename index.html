@@ -21,6 +21,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#" data-target="key-dates" onclick="navigateToSection(event)">Key Dates</a></li>
                             <li><a href="#" data-target="calculators" onclick="navigateToSection(event)">Calculators</a></li>
+                            <li><a href="#" data-target="questionnaires" onclick="navigateToSection(event)">Questionnaires</a></li>
                         </ul>
                     </li>
                     <li><a href="#" data-target="services" onclick="navigateToSection(event)">Our Services</a></li>
@@ -45,20 +46,116 @@
         <!-- Content will be dynamically populated -->
     </section>
     
+    <section id="questionnaires" class="hidden">
+        <h2>Questionnaires</h2>
+        <p>Coming soon! This section will include important questionnaires for clients to fill out.</p>
+    </section>
 
     <section id="calculators" class="hidden">
         <h2>Calculators</h2>
-        <form id="calculator-form">
-            <label for="number1">Enter first number:</label>
-            <input type="number" id="number1" required><br><br>
-
-            <label for="number2">Enter second number:</label>
-            <input type="number" id="number2" required><br><br>
-
-            <button type="button" onclick="performCalculation()">Calculate</button>
-        </form>
-        <p id="calculation-result"></p>
+        <div class="calculator-grid">
+            <div class="calculator-item">
+                <i class="fas fa-percent"></i>
+                <p>15% GST Calculator</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-flag-checkered"></i>
+                <p>Achieve My Savings Target</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-money-check-alt"></i>
+                <p>Basic Loan Repayments</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-calendar-day"></i>
+                <p>Bi Monthly Calculator</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-car-side"></i>
+                <p>Car Lease</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-balance-scale-left"></i>
+                <p>Complete Loan Comparison</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-hand-holding-usd"></i>
+                <p>Extra Repayments</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <p>Income Tax Calculator</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-hourglass-end"></i>
+                <p>How Long to Repay?</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-hand-holding"></i>
+                <p>How Much Can I Borrow?</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-coins"></i>
+                <p>Lump Sum Repayments</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-trophy"></i>
+                <p>Millionaire Calculator</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-chart-pie"></i>
+                <p>P&I / Interest Only</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-wallet"></i>
+                <p>Remaining Balance</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-home"></i>
+                <p>Reverse Mortgage</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-piggy-bank"></i>
+                <p>Savings</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-random"></i>
+                <p>Split Loan</p>
+            </div>
+            <div class="calculator-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <p>What Can I Afford to Borrow?</p>
+            </div>
+        </div>
     </section>
+    <section id="gst-calculator">
+        <h2>15% GST Calculator</h2>
+        <form>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+    
+            <div class="button-group">
+                <button type="button" onclick="addGST()">Add GST</button>
+                <button type="button" onclick="subtractGST()">Subtract GST</button>
+                <button type="button" onclick="clearFields()">Clear All</button>
+            </div>
+    
+            <label for="subtotal">Subtotal:</label>
+            <input type="text" id="subtotal" readonly>
+    
+            <label for="gst">GST (15%):</label>
+            <input type="text" id="gst" readonly>
+    
+            <label for="total">Total:</label>
+            <input type="text" id="total" readonly>
+        </form>
+    
+        <p class="disclaimer">
+            <strong>Disclaimer:</strong> Whilst every effort has been made to ensure the accuracy of this calculator, the results should be used as an indication only.
+        </p>
+    </section>
+    
+    
 
     <section id="services" class="hidden">
         <h2>Our Services</h2>

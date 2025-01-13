@@ -74,6 +74,43 @@ window.addEventListener('popstate', () => {
     const sectionId = location.pathname.replace('/', '') || 'home';
     showSection(sectionId);
 });
+function addGST() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    if (isNaN(amount)) {
+        alert('Please enter a valid amount.');
+        return;
+    }
+
+    const gst = (amount * 0.15).toFixed(2); // Calculate 15% GST
+    const total = (amount + parseFloat(gst)).toFixed(2); // Amount + GST
+
+    document.getElementById('subtotal').value = `$${amount.toFixed(2)}`;
+    document.getElementById('gst').value = `$${gst}`;
+    document.getElementById('total').value = `$${total}`;
+}
+
+function subtractGST() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    if (isNaN(amount)) {
+        alert('Please enter a valid amount.');
+        return;
+    }
+
+    const subtotal = (amount / 1.15).toFixed(2); // Amount excluding GST
+    const gst = (amount - subtotal).toFixed(2); // GST portion
+
+    document.getElementById('subtotal').value = `$${subtotal}`;
+    document.getElementById('gst').value = `$${gst}`;
+    document.getElementById('total').value = `$${amount.toFixed(2)}`;
+}
+
+function clearFields() {
+    document.getElementById('amount').value = '';
+    document.getElementById('subtotal').value = '';
+    document.getElementById('gst').value = '';
+    document.getElementById('total').value = '';
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const jsonFilePath = './data.json'; // Path to your JSON file
