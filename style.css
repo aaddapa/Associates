@@ -1,4 +1,5 @@
 /* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,15 +8,22 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    margin-top: 82.5px; /* Keep this value if it matches your header height */
+    background-color: #f4f4f4; /* Ensure background matches your content */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
 }
 
+
 header {
-    background-color: white; /* Updated header background to white */
-    color: black; /* Updated text color to black */
-    padding: 2em 0; /* Increased padding for larger header */
+    background-color: white;
+    color: black;
+    padding: 2em 0;
     text-align: center;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow below the header */
+    position: fixed; /* Set to fixed for sticky behavior */
+    top: 0; /* Align it to the top of the viewport */
+    width: 100%; /* Ensure the header spans the full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header::before {
@@ -178,7 +186,7 @@ section {
     flex: 1;
     display: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow above footer */
-    background-color: #f3f2ef; /* Updated background to the specified color */
+    border-radius: 10px; 
 }
 
 section.active {
@@ -525,10 +533,6 @@ iframe {
     nav ul li a:hover {
         text-decoration: underline; /* Underline on hover */
         text-decoration-color: black; /* Updated underline color */
-    }
-
-    section {
-        padding: 1em;
     }
 
     #contact-form {
