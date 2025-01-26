@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Resources - Kiwiwise</title>
 </head>
 <body>
@@ -11,13 +12,15 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/logo.jpg" alt="Logo">
+                <a href="index.html">
+                    <img src="images/logo.jpg" alt="Logo">
+                </a>
             </div>
             <nav>
                 <ul class="navbar">
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                        <a href="#">Resources</a>
+                        <a href="resources.html">Resources</a>
                         <ul class="dropdown-menu">
                             <li><a href="resources-keydates.html">Key Dates</a></li>
                             <li><a href="resources-calculators.html">Calculators</a></li>
@@ -31,11 +34,27 @@
         </div>
     </header>
 
-    <main>
-        <h1>Resources</h1>
-        <p>Information about Resources.</p>
+    <main id="resources-main">
+        <h2>Resources</h2>
+        <div class="resource-links">
+            <a href="resources-keydates.html" class="resource-card">
+                <i class="fas fa-calendar-alt icon"></i>
+                <h3>Key Dates</h3>
+                <p>Keep track of important deadlines and events.</p>
+            </a>
+            <a href="resources-calculators.html" class="resource-card">
+                <i class="fas fa-calculator icon"></i>
+                <h3>Calculators</h3>
+                <p>Use our financial tools to make your calculations easier.</p>
+            </a>
+            <a href="resources-questionnaires.html" class="resource-card">
+                <i class="fas fa-file-alt icon"></i>
+                <h3>Questionnaires</h3>
+                <p>Help us know you better with our detailed questionnaires.</p>
+            </a>
+        </div>
     </main>
-
+    
     <footer>
         <p>&copy; 2025 Kiwiwise Accounting. All rights reserved.</p>
     </footer>
