@@ -1,201 +1,124 @@
-function toggleMenu() {
-    const navMenu = document.getElementById('nav-menu');
-    const navItems = document.getElementById('nav-items');
-    const menuIcon = document.querySelector('.menu-icon');
+document.addEventListener("DOMContentLoaded", () => {
+    // Event listener for cue cards
+    document.querySelectorAll(".calculator-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const calculatorId = card.getAttribute("data-calculator"); // Get the calculator ID
+            console.log("Opening calculator:", calculatorId);
 
-    navMenu.classList.toggle('show');
-    navItems.classList.toggle('show');
+            // Hide all cue cards and calculator sections
+            document.getElementById("financial-calculators-title").style.display = "none";
 
-    // Change hamburger to X or vice versa
-    if (navMenu.classList.contains('show')) {
-        menuIcon.innerHTML = '&times;'; // X mark
-    } else {
-        menuIcon.innerHTML = '&#9776;'; // Hamburger menu
-    }
-}
+            document.getElementById("calculators-container").style.display = "none";
+            document.querySelectorAll(".calculator-section").forEach(section => {
+                section.style.display = "none";
+            });
 
-
-
-function navigateToSection(event) {
-    event.preventDefault();
-    const targetSectionId = event.target.getAttribute('data-target');
-    showSection(targetSectionId);
-    updateURL(targetSectionId);
-
-    // Close the menu after navigating
-    toggleMenu();
-}
-
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.remove('active');
+            // Show the selected calculator
+            const selectedCalculator = document.getElementById(calculatorId);
+            if (selectedCalculator) {
+                selectedCalculator.style.display = "block";
+            } else {
+                console.error(`Calculator with id "${calculatorId}" not found.`);
+            }
+        });
     });
 
-    const activeSection = document.getElementById(sectionId);
-    if (activeSection) {
-        activeSection.classList.add('active');
-    }
-}
+    // Event listener for "Back to Calculators" buttons
+    document.querySelectorAll(".back-to-calculators").forEach(button => {
+        button.addEventListener("click", () => {
+            // Hide all calculators
+            document.querySelectorAll(".calculator-section").forEach(section => {
+                section.style.display = "none";
+            });
 
-function updateURL(sectionId) {
-    history.pushState(null, null, `/${sectionId}`);
-}
+            // Show the cue cards
+            document.getElementById("financial-calculators-title").style.display = "block";
 
-// On page load, display the correct section or redirect to /home
-document.addEventListener('DOMContentLoaded', () => {
-    let sectionId = location.pathname.replace('/', '');
-    
-    // If no section specified, default to 'home'
-    if (!sectionId || sectionId === 'index.html') {
-        sectionId = 'home';
-        history.replaceState(null, null, `/home`);
+            document.getElementById("calculators-container").style.display = "flex";
+        });
+    });
+
+  // Tax brackets
+  const taxBrackets = {
+    2024: [
+        { upper: 14000, rate: 0.105 },
+        { upper: 15600, rate: 0.1282 },
+        { upper: 48000, rate: 0.175 },
+        { upper: 53500, rate: 0.2164 },
+        { upper: 70000, rate: 0.30 },
+        { upper: 78100, rate: 0.3099 },
+        { upper: 180000, rate: 0.33 },
+        { upper: Infinity, rate: 0.39 }
+    ]
+};
+
+// ACC Earners' Levy rate
+const accLevyRate = 0.016; // 1.6%
+
+// Calculate tax logic
+
+document.getElementById("calculate-tax").addEventListener("click", () => {
+    const income = parseFloat(document.getElementById("income").value);
+    const year = "2024"; // Fixed for now
+    const brackets = taxBrackets[year];
+
+    if (isNaN(income) || income <= 0) {
+        alert("Please enter a valid income.");
+        return;
     }
-    
-    showSection(sectionId);
+
+    let totalTax = 0;
+    let remainingIncome = income;
+    const breakdown = [];
+
+    // Calculate tax per bracket
+    for (let i = 0; i < brackets.length; i++) {
+        const { upper, rate } = brackets[i];
+        const lower = brackets[i - 1]?.upper || 0; // Lower bound of the bracket
+        const taxableAmount = Math.min(remainingIncome, upper - lower);
+
+        if (taxableAmount > 0) {
+            const tax = taxableAmount * rate;
+
+            breakdown.push({
+                bracket: `$${taxableAmount.toFixed(0)}`, // Only the exact amount is displayed
+                rate: `${(rate * 100).toFixed(2)}%`,
+                tax: `$${tax.toFixed(2)}`
+            });
+
+            totalTax += tax;
+            remainingIncome -= taxableAmount;
+
+            if (remainingIncome <= 0) break;
+        }
+    }
+
+    // Calculate ACC Earners' Levy
+    const accLevy = income * accLevyRate;
+
+    // Calculate Net Income
+    const netIncome = income - totalTax - accLevy;
+
+    // Calculate Net Income per Month, Fortnight, and Week
+    const netIncomePerMonth = netIncome / 12;
+    const netIncomePerFortnight = netIncome / 26;
+    const netIncomePerWeek = netIncome / 52;
+
+    // Populate Results Table
+    const resultsTable = document.querySelector("#tax-breakdown tbody");
+    resultsTable.innerHTML = breakdown
+        .map(row => `<tr><td>${row.bracket}</td><td>${row.rate}</td><td>${row.tax}</td></tr>`)
+        .join("");
+
+    // Update totals
+    document.getElementById("total-tax").textContent = `$${totalTax.toFixed(2)}`;
+    document.getElementById("acc-levy").textContent = `$${accLevy.toFixed(2)}`;
+    document.getElementById("net-income").textContent = `$${netIncome.toFixed(2)}`;
+    document.getElementById("net-month").textContent = `$${netIncomePerMonth.toFixed(2)}`;
+    document.getElementById("net-fortnight").textContent = `$${netIncomePerFortnight.toFixed(2)}`;
+    document.getElementById("net-week").textContent = `$${netIncomePerWeek.toFixed(2)}`;
+
+    // Show results section
+    document.querySelector(".results").style.display = "block";
 });
-
-function performCalculation() {
-    const number1 = parseFloat(document.getElementById('number1').value);
-    const number2 = parseFloat(document.getElementById('number2').value);
-
-    if (isNaN(number1) || isNaN(number2)) {
-        alert('Please enter valid numbers!');
-        return;
-    }
-
-    const result = number1 + number2; // Change to other operations if needed
-    document.getElementById('calculation-result').textContent = `Result: ${result}`;
-}
-
-
-// Handle back/forward navigation
-window.addEventListener('popstate', () => {
-    const sectionId = location.pathname.replace('/', '') || 'home';
-    showSection(sectionId);
-});
-function addGST() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    if (isNaN(amount)) {
-        alert('Please enter a valid amount.');
-        return;
-    }
-
-    const gst = (amount * 0.15).toFixed(2); // Calculate 15% GST
-    const total = (amount + parseFloat(gst)).toFixed(2); // Amount + GST
-
-    document.getElementById('subtotal').value = `$${amount.toFixed(2)}`;
-    document.getElementById('gst').value = `$${gst}`;
-    document.getElementById('total').value = `$${total}`;
-}
-
-function subtractGST() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    if (isNaN(amount)) {
-        alert('Please enter a valid amount.');
-        return;
-    }
-
-    const subtotal = (amount / 1.15).toFixed(2); // Amount excluding GST
-    const gst = (amount - subtotal).toFixed(2); // GST portion
-
-    document.getElementById('subtotal').value = `$${subtotal}`;
-    document.getElementById('gst').value = `$${gst}`;
-    document.getElementById('total').value = `$${amount.toFixed(2)}`;
-}
-
-function clearFields() {
-    document.getElementById('amount').value = '';
-    document.getElementById('subtotal').value = '';
-    document.getElementById('gst').value = '';
-    document.getElementById('total').value = '';
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const jsonFilePath = './data.json'; // Path to your JSON file
-    let jsonData = null; // Declare jsonData globally
-
-    // Fetch JSON data
-    fetch(jsonFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            jsonData = data; // Store fetched data globally
-            renderMonthCards(jsonData);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-
-    // Function to render month cards
-    function renderMonthCards(jsonData) {
-        const keyDatesContainer = document.getElementById('key-dates');
-
-        // Clear existing content
-        keyDatesContainer.innerHTML = '';
-
-        // Loop through JSON data and create cards for each month
-        jsonData.data.forEach(monthData => {
-            const card = document.createElement('div');
-            card.classList.add('month-card');
-            card.innerHTML = `<h3>${monthData.month}</h3>`;
-            card.addEventListener('click', () => renderKeyDates(monthData)); // Add click event
-            keyDatesContainer.appendChild(card);
-        });
-    }
-
-    // Function to render key dates for a selected month
-    function renderKeyDates(monthData) {
-        const keyDatesContainer = document.getElementById('key-dates');
-
-        // Clear existing content
-        keyDatesContainer.innerHTML = '';
-
-        // Add back button
-        const backButton = document.createElement('button');
-        backButton.textContent = 'Back to Months';
-        backButton.classList.add('back-button');
-        backButton.addEventListener('click', () => renderMonthCards(jsonData)); // Use jsonData to go back
-        keyDatesContainer.appendChild(backButton);
-
-        // Add month title
-        const monthTitle = document.createElement('h2');
-        monthTitle.textContent = monthData.month;
-        keyDatesContainer.appendChild(monthTitle);
-
-        // Create a table for key dates
-        const table = document.createElement('table');
-        table.classList.add('key-dates-table');
-
-        // Add table headers
-        const tableHeader = `
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                </tr>
-            </thead>`;
-        table.innerHTML = tableHeader;
-
-        // Add table body with key dates
-        const tableBody = document.createElement('tbody');
-        monthData.key_dates.forEach(dateEntry => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${dateEntry.date}</td>
-                <td>${dateEntry.category}</td>
-                <td>${dateEntry.description}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-
-        table.appendChild(tableBody);
-        keyDatesContainer.appendChild(table);
-    }
 });

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../script.js" defer></script>
+    <title>Resources - Kiwiwise</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="../resources.html">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="resources-keydates.html">Key Dates</a></li>
+                            <li><a href="resources-calculators.html">Calculators</a></li>
+                            <li><a href="resources-questionnaires.html">Questionnaires</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../services.html">Our Services</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="calculators-main">
+        <h2 id="financial-calculators-title">Financial Calculators</h2>
+        <div id="calculators-container" class="calculators-container">
+            <div class="calculator-card" data-calculator="income-tax-calculator">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <h3>Income Tax Calculator</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-landmark"></i>
+                <h3>How Much Can I Borrow?</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-piggy-bank"></i>
+                <h3>Savings Calculator</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Basic Loan Repayments</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-coins"></i>
+                <h3>15% GST Calculator</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Bi-Monthly Calculator</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Complete Loan Comparison</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Remaining Balance</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-recycle"></i>
+                <h3>Reverse Mortgage</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-hourglass-half"></i>
+                <h3>How Long to Repay?</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-divide"></i>
+                <h3>Split Loan</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-money-check"></i>
+                <h3>P&I (Principal & Interest Only)</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Lump Sum Repayments</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-gem"></i>
+                <h3>Millionaire Calculator</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-car-side"></i>
+                <h3>Car Lease</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Extra Repayments</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>What Can I Afford to Borrow?</h3>
+            </div>
+            <div class="calculator-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Achieve My Savings Target</h3>
+            </div>
+        </div> 
+        
+        <div id="income-tax-calculator" class="calculator-section" style="display: none;">
+            <h2>Income Tax Calculator</h2>
+            <div class="tax-details">
+                <p>Please select which period you would like to calculate your taxable income for:</p>
+                <select id="tax-year">
+                    <option value="2024">From 1 April 2024 to 31 March 2025</option>
+                </select>
+                <p>
+                    <label for="income">Please enter your Taxable Income, i.e., Gross Salary: $</label>
+                    <input type="number" id="income" placeholder="e.g., 50000">
+                </p>
+                <button id="calculate-tax">Calculate</button>
+            </div>
+        
+            <div class="results" style="display: none; margin-top: 20px;">
+                <h3>Results</h3>
+                <table id="tax-breakdown" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Tax Bracket</th>
+                            <th>Tax Rate</th>
+                            <th>Tax Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Tax rows will be populated dynamically -->
+                    </tbody>
+                </table>
+                <div style="margin-top: 20px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Total Tax</th>
+                                <td id="total-tax">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>ACC Earners' Levy (1.6%)</th>
+                                <td id="acc-levy">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>Net Income (after tax and ACC Levy)</th>
+                                <td id="net-income">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>Net Income Per Month</th>
+                                <td id="net-month">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>Net Income Per Fortnight</th>
+                                <td id="net-fortnight">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>Net Income Per Week</th>
+                                <td id="net-week">$0.00</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <p style="margin-top: 20px; font-size: 12px; color: #555;">
+                    <strong>Disclaimer:</strong> This calculator is intended for informational purposes only and should not be considered financial advice. Tax laws and rates may vary.
+            </div>
+        
+            <button class="back-to-calculators" style="margin-top: 20px;">Back to Calculators</button>
+        </div> 
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Kiwiwise Accounting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
