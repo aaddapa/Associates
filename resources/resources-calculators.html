@@ -42,27 +42,27 @@
                 <i class="fas fa-file-invoice-dollar"></i>
                 <h3>Income Tax Calculator</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="borrow-calculator">
                 <i class="fas fa-landmark"></i>
                 <h3>How Much Can I Borrow?</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="savings-calculator">
                 <i class="fas fa-piggy-bank"></i>
                 <h3>Savings Calculator</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="basic-loan-repayment-calculator">
                 <i class="fas fa-file-invoice"></i>
                 <h3>Basic Loan Repayments</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="gst-calculator">
                 <i class="fas fa-coins"></i>
                 <h3>15% GST Calculator</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="bimonthly-tax-calculator">
                 <i class="fas fa-calendar-check"></i>
                 <h3>Bi-Monthly Calculator</h3>
             </div>
-            <div class="calculator-card">
+            <div class="calculator-card" data-calculator="loan-comparision-calculator">
                 <i class="fas fa-chart-bar"></i>
                 <h3>Complete Loan Comparison</h3>
             </div>
@@ -126,7 +126,7 @@
                 <button id="calculate-tax">Calculate</button>
             </div>
         
-            <div class="results" style="display: none; margin-top: 20px;">
+            <div class="results" style="display: none; margin-top: 20px; color: #0056b3;">
                 <h3>Results</h3>
                 <table id="tax-breakdown" style="width: 100%; border-collapse: collapse;">
                     <thead>
@@ -176,6 +176,278 @@
         
             <button class="back-to-calculators" style="margin-top: 20px;">Back to Calculators</button>
         </div> 
+
+        <div id="borrow-calculator" class="calculator-section" style="display: none;">
+            <h2 style="color: #0056b3;">How Much Can I Borrow?</h2>
+            <form id="borrow-form">
+                <!-- Loan Details Section -->
+                <fieldset>
+                    <legend>Loan Details</legend>
+                    <label for="loan-term">Loan Term (years):</label>
+                    <select id="loan-term">
+                        <option value="30">30</option>
+                        <option value="25">25</option>
+                        <option value="20">20</option>
+                        <option value="15">15</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label for="interest-rate">Interest Rate (%):</label>
+                    <input type="number" id="interest-rate" placeholder="e.g., 5.50" step="0.01" min="0">
+                </fieldset>
+        
+                <!-- Income Section -->
+                <fieldset>
+                    <legend>Income</legend>
+                    <!-- Gross Income 1 -->
+                    <label for="gross-income-1">Gross Income 1:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="gross-income-1" placeholder="e.g., 75000" step="1000" min="0">
+                    </div>
+                    <label for="frequency-income-1">Frequency:</label>
+                    <select id="frequency-income-1">
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+        
+                    <!-- Gross Income 2 -->
+                    <label for="gross-income-2">Gross Income 2:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="gross-income-2" placeholder="e.g., 50000" step="1000" min="0">
+                    </div>
+                    <label for="frequency-income-2">Frequency:</label>
+                    <select id="frequency-income-2">
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+        
+                    <!-- Untaxed Income -->
+                    <label for="untaxed-income">Untaxed Income:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="untaxed-income" placeholder="e.g., 0" step="1000" min="0">
+                    </div>
+                    <label for="frequency-untaxed-income">Frequency:</label>
+                    <select id="frequency-untaxed-income">
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+        
+                    <!-- Rental Income -->
+                    <label for="rental-income">Rental Income:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="rental-income" placeholder="e.g., 0" step="1000" min="0">
+                    </div>
+                    <label for="frequency-rental-income">Frequency:</label>
+                    <select id="frequency-rental-income">
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </fieldset>
+        
+                <!-- Expenses Section -->
+                <fieldset>
+                    <legend>Expenses</legend>
+                    <!-- Other Loans -->
+                    <label for="other-loans">Other Loans:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="other-loans" placeholder="e.g., 0" step="1000" min="0">
+                    </div>
+                    <label for="frequency-other-loans">Frequency:</label>
+                    <select id="frequency-other-loans">
+                        <option value="monthly">Monthly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+        
+                    <!-- Car Loan Repayments -->
+                    <label for="car-loan-repayments">Car Loan Repayments Per Month:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="car-loan-repayments" placeholder="e.g., 0" step="100" min="0">
+                    </div>
+        
+                    <!-- Credit Card Limit -->
+                    <label for="credit-card-limit">Total Credit Card Limit:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="credit-card-limit" placeholder="e.g., 0" step="100" min="0">
+                    </div>
+        
+                    <!-- Number of Dependents -->
+                    <label for="dependents">Number of Dependents:</label>
+                    <input type="number" id="dependents" placeholder="e.g., 0" step="1" min="0">
+                </fieldset>
+        
+                <!-- Calculate Button -->
+                <button type="button" id="calculate-borrow">Calculate</button>
+            </form>
+        
+            <!-- Results Section -->
+            <div id="borrow-results" style="display: none; margin-top: 20px;">
+                <h3>Results</h3>
+                <p>You can borrow up to: <strong id="borrow-amount">$0.00</strong></p>
+                <p>Monthly repayments: <strong id="monthly-repayment">$0.00</strong></p>
+                <p>Total interest payable: <strong id="total-interest">$0.00</strong></p>
+                <p>Fortnightly repayments: <strong id="fortnightly-repayment">$0.00</strong></p>
+                <p>Weekly repayments: <strong id="weekly-repayment">$0.00</strong></p>
+            </div>
+        
+            <!-- Back Button -->
+            <button class="back-to-calculators">Back to Calculators</button>
+        </div>
+
+        <div id="savings-calculator" class="calculator-section" style="display: none;">
+            <h2 style="color: #0056b3;">Savings Calculator</h2>
+            <form id="savings-form">
+                <!-- Savings Details -->
+                <fieldset>
+                    <legend>Savings Details</legend>
+                    <label for="savings-term">Saving Term (years):</label>
+                    <select id="savings-term">
+                        <option value="1">1 year</option>
+                        <option value="2">2 years</option>
+                        <option value="3">3 years</option>
+                        <option value="4">4 years</option>
+                        <option value="5" selected>5 years</option>
+                    </select>
+        
+                    <label for="savings-initial-amount">Initial Amount:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="savings-initial-amount" placeholder="e.g., 1000" step="100" min="0">
+                    </div>
+        
+                    <label for="savings-deposit-amount">Deposit Amount:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="savings-deposit-amount" placeholder="e.g., 200" step="10" min="0">
+                    </div>
+        
+                    <label for="savings-deposit-frequency">Deposit Frequency:</label>
+                    <select id="savings-deposit-frequency">
+                        <option value="weekly">Weekly</option>
+                        <option value="fortnightly">Fortnightly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                    </select>
+        
+                    <label for="savings-interest-rate">Interest Rate (%):</label>
+                    <input type="number" id="savings-interest-rate" placeholder="e.g., 4.00" step="0.01" min="0">
+                </fieldset>
+        
+                <!-- Calculate Button -->
+                <button type="button" id="calculate-savings">Calculate</button>
+            </form>
+        
+            <!-- Results Section -->
+            <div id="savings-results" style="display: none; margin-top: 20px;">
+                <h3>Results</h3>
+                <p>Total amount at the end of term: <strong id="total-amount">$0.00</strong></p>
+                <p>Total amount deposited: <strong id="total-deposited">$0.00</strong></p>
+                <p>Total interest earned: <strong id="savings-total-interest">$0.00</strong></p>
+            </div>
+        
+            <!-- Back Button -->
+            <button class="back-to-calculators">Back to Calculators</button>
+        </div>
+
+        <div id="basic-loan-repayment-calculator" class="calculator-section" style="display: none;">
+            <h2 style="color: #0056b3;">Basic Loan Repayments</h2>
+            <form id="basic-loan-repayment-form">
+                <fieldset>
+                    <legend>Loan Details</legend>
+                    <label for="loan-amount">Loan Amount:</label>
+                    <div class="currency-input">
+                        <span>$</span>
+                        <input type="number" id="loan-amount" placeholder="e.g., 350000" step="1000" min="0">
+                    </div>
+                </fieldset>
+        
+                <!-- Loan Options -->
+                <div class="loan-options">
+                    <!-- Loan A -->
+                    <fieldset>
+                        <legend>Loan A</legend>
+                        <label for="loan-a-term">Loan Term (years):</label>
+                        <select id="loan-a-term">
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="25">25 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+        
+                        <label for="loan-a-rate">Interest Rate (%):</label>
+                        <input type="number" id="loan-a-rate" placeholder="e.g., 5.5" step="0.01" min="0">
+        
+                        <label for="loan-a-frequency">Repayment Frequency:</label>
+                        <select id="loan-a-frequency">
+                            <option value="weekly">Weekly</option>
+                            <option value="fortnightly" selected>Fortnightly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </fieldset>
+        
+                    <!-- Loan B -->
+                    <fieldset>
+                        <legend>Loan B</legend>
+                        <label for="loan-b-term">Loan Term (years):</label>
+                        <select id="loan-b-term">
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="25" selected>25 years</option>
+                            <option value="30">30 years</option>
+                        </select>
+        
+                        <label for="loan-b-rate">Interest Rate (%):</label>
+                        <input type="number" id="loan-b-rate" placeholder="e.g., 5.5" step="0.01" min="0">
+        
+                        <label for="loan-b-frequency">Repayment Frequency:</label>
+                        <select id="loan-b-frequency">
+                            <option value="weekly">Weekly</option>
+                            <option value="fortnightly">Fortnightly</option>
+                            <option value="monthly" selected>Monthly</option>
+                        </select>
+                    </fieldset>
+                </div>
+        
+                <!-- Add more loans if needed -->
+                <button type="button" id="calculate-loans">Calculate</button>
+            </form>
+        
+            <!-- Results Section -->
+            <div id="loan-results" style="display: none; margin-top: 20px;">
+                <h3>Results</h3>
+                <p id="loan-summary"></p>
+                <div id="loan-comparison">
+                    <h4>Loan A</h4>
+                    <p>Periodic Payment: <span id="loan-a-periodic"></span></p>
+                    <p>Total Cost: <span id="loan-a-total"></span></p>
+        
+                    <h4>Loan B</h4>
+                    <p>Periodic Payment: <span id="loan-b-periodic"></span></p>
+                    <p>Total Cost: <span id="loan-b-total"></span></p>
+                </div>
+            </div>
+        
+            <!-- Back Button -->
+            <button class="back-to-calculators">Back to Calculators</button>
+        </div>
+        
+        
+        
+    
     </main>
     
     <footer>

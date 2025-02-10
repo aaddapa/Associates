@@ -450,6 +450,337 @@ button:hover {
     background-color: #003d80;
 }
 
+/* Borrow Calculator Container */
+#borrow-calculator {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Borrow Calculator Title */
+#borrow-calculator h2 {
+    text-align: center;
+    color: #0056b3;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Borrow Calculator Fieldset */
+#borrow-calculator fieldset {
+    border: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.borrow-form fieldset{
+color: #0056b3;
+}
+/* Borrow Calculator Legend */
+#borrow-calculator legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+/* Borrow Calculator Labels */
+#borrow-calculator label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Borrow Calculator Input Fields */
+#borrow-calculator input[type="number"],
+#borrow-calculator select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Borrow Calculator Currency Input */
+#borrow-calculator .currency-input {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#borrow-calculator .currency-input span {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #555;
+}
+
+#borrow-calculator .currency-input input {
+    padding-left: 25px;
+}
+
+/* Borrow Calculator Buttons */
+#borrow-calculator button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#borrow-calculator button:hover {
+    background-color: #003f8c;
+}
+
+#borrow-calculator button:active {
+    background-color: #002a5f;
+}
+
+/* Borrow Calculator Results Section */
+#borrow-results {
+    padding: 20px;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e5ff;
+    border-radius: 4px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+#borrow-results h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+/* Back to Calculators Button */
+#borrow-calculator .back-to-calculators {
+    margin-top: 20px;
+    font-weight: normal;
+    transition: background-color 0.3s ease;
+}
+
+#borrow-calculator .back-to-calculators:hover {
+    background-color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #borrow-calculator {
+        padding: 15px;
+    }
+
+    #borrow-calculator input[type="number"],
+    #borrow-calculator select {
+        font-size: 0.9em;
+    }
+
+    #borrow-calculator button {
+        font-size: 0.9em;
+    }
+}
+
+/* Savings Calculator Section */
+#savings-calculator {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#savings-calculator h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Savings Calculator Form */
+#savings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#savings-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#savings-form legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+#savings-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#savings-form input[type="number"],
+#savings-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#savings-form input[type="number"]:focus,
+#savings-form select:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Currency Input for Savings Calculator */
+#savings-form .currency-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#savings-form .currency-input span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+/* Buttons in Savings Calculator */
+#savings-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#savings-form button:hover {
+    background-color: #003d82;
+}
+
+#savings-form button.back-to-calculators {
+    margin-top: 20px;
+    background-color: #777;
+}
+
+#savings-form button.back-to-calculators:hover {
+    background-color: #555;
+}
+
+/* Results Section for Savings Calculator */
+#savings-results {
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px dashed #0056b3;
+    border-radius: 10px;
+    background-color: #e8f1fa;
+}
+
+#savings-results h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+#savings-results p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+#savings-results strong {
+    color: #0056b3;
+}
+
+#basic-loan-repayment-calculator {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#basic-loan-repayment-calculator h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loan-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px auto; 
+}
+
+.loan-options fieldset {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    margin-top: 20px; /* Add space above Loan sections */
+    margin-bottom: 20px; /* Add space below Loan sections */
+}
+
+.loan-options label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+#loan-results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px dashed #0056b3;
+    background-color: #e8f1fa;
+    border-radius: 10px;
+}
 
 
 /* Footer Styling */
