@@ -4,14 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/tabicon.png"> <!-- Add this line -->
     <title>Home - Kiwiwise</title>
+    <style>
+        /* Hero Section */
+        .home-hero {
+            position: relative;
+            background: linear-gradient(135deg, #89CFF0, #1D3557);
+            text-align: center;
+            padding: 120px 20px;
+            color: #F8F9FA;
+        }
+        .home-hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .home-hero p {
+            font-size: 1.7em;
+            margin-bottom: 30px;
+            color: #D9E2EF;
+        }
+        .home-cta-button {
+            display: inline-block;
+            background: #FFC107; /* Gold color */
+            color: #00243D;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .home-cta-button:hover {
+            background: #FFA000; /* Darker gold */
+            color: #FFFFFF;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .home-about {
+    padding: 50px 20px;
+    text-align: center;
+    background: #EDF2F4;
+}
+
+.home-about-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home-about-item {
+    background: #FFFFFF;
+    border: 1px solid #D9E2EF;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-about-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-about-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #0083c0;
+}
+
+.home-about-item p {
+    font-size: 1em;
+    color: #6C757D;
+}
+
+
+        /* Services Section */
+        .home-services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .home-service-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .home-service-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1px solid #D9E2EF;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .home-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .home-service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #0083c0;
+        }
+        .home-service-card p {
+            font-size: 1em;
+            color: #6C757D;
+        }
+
+        /* Resources Section */
+        .home-resources {
+            padding: 50px 20px;
+            text-align: center;
+            background: #F9F9F9;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo.jpg" alt="Logo">
+                    <img src="images/logo.jpg" alt="Kiwiwise Logo">
                 </a>
             </div>
             <nav>
@@ -25,7 +149,6 @@
                             <li><a href="resources/resources-calculators.html">Calculators</a></li>
                         </ul>
                     </li>
-                    <li><a href="services.html">Our Services</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -33,11 +156,72 @@
     </header>
 
     <main>
-        <h1>Welcome to Kiwiwise</h1>
-        <p>Information about Home.</p>
+        <section class="home-hero">
+            <h1>Welcome to Kiwiwise Accounting</h1>
+            <p>Your trusted partner for financial success, tax planning, and business advisory.</p>
+            <a href="resources.html" class="home-cta-button">Explore Our Resources</a>
+        </section>
+
+        <section class="home-about">
+            <h2>Why Choose Kiwiwise?</h2>
+            <p>We specialize in simplifying financial management for individuals and businesses. Here’s why Kiwiwise stands out:</p>
+            <div class="home-about-list">
+                <div class="home-about-item">
+                    <h3>Expert Guidance</h3>
+                    <p>Receive advice from seasoned professionals to navigate complex financial landscapes.</p>
+                </div>
+                <div class="home-about-item">
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored strategies that align with your unique financial goals and needs.</p>
+                </div>
+                <div class="home-about-item">
+                    <h3>Proven Results</h3>
+                    <p>Decades of success helping clients maximize their financial potential.</p>
+                </div>
+                <div class="home-about-item">
+                    <h3>Client-Centered</h3>
+                    <p>Our priority is your success, with personalized attention and support every step of the way.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-services">
+            <h2>What We Offer</h2>
+            <div class="home-service-slider">
+                <div class="home-service-card">
+                    <h3>Personalized Tax Consultation</h3>
+                    <p>Receive tailored advice to optimize your tax strategy and ensure compliance with regulations.</p>
+                </div>
+                <div class="home-service-card">
+                    <h3>Business Accounting & Compliance</h3>
+                    <p>Streamline your business operations with expert accounting and compliance solutions.</p>
+                </div>
+                <div class="home-service-card">
+                    <h3>Financial Planning & Advisory</h3>
+                    <p>Plan for a secure financial future with our expert advisory services.</p>
+                </div>
+                <div class="home-service-card">
+                    <h3>Bookkeeping & Payroll Management</h3>
+                    <p>Efficiently manage your financial records and payroll processes with our support.</p>
+                </div>
+                <div class="home-service-card">
+                    <h3>GST & Tax Return Filing</h3>
+                    <p>Ensure accurate and timely GST and tax return filings with our help.</p>
+                </div>
+                <div class="home-service-card">
+                    <h3>Investment and Retirement Planning</h3>
+                    <p>Secure your future with strategic investment and retirement planning.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-resources">
+            <h2>Explore Our Resources</h2>
+            <p>Stay updated with key tax dates, use our financial calculators, and access expert business guides.</p>
+            <a href="resources.html" class="home-cta-button">View Resources</a>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Kiwiwise Accounting. All rights reserved.</p>
     </footer>
