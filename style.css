@@ -117,6 +117,82 @@ header {
     cursor: pointer;
 }
 
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+ }
+    
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+    
+.hamburger.active div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+    
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+    
+.hamburger.active div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+    
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FFFFFF;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 1rem 0;
+    text-align: center; /* Center all menu items */
+}
+    
+.mobile-menu.show {
+    display: flex;
+}
+    
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom: 1px solid #f1f1f1; /* Optional divider for better visual separation */
+}
+    
+.mobile-menu a:last-child {
+    border-bottom: none; /* Remove divider for the last item */
+    
+}
+    
+ .dropdown .dropdown-menu {
+    display: none;
+}
+    
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+         display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .dropdown .dropdown-menu {
+        display: none !important;
+    }
+}
+    
+
 #resources-main {
     text-align: center; /* Center-align text */
     padding: 40px 20px; /* Add spacing around the main content */

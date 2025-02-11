@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <link rel="icon" type="image/png" href="images/tabicon.png"> <!-- Add this line -->
     <title>Home - Kiwiwise</title>
     <style>
@@ -46,44 +47,44 @@
 
         /* About Section */
         .home-about {
-    padding: 50px 20px;
-    text-align: center;
-    background: #EDF2F4;
-}
+            padding: 50px 20px;
+            text-align: center;
+            background: #EDF2F4;
+        }
 
-.home-about-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        .home-about-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.home-about-item {
-    background: #FFFFFF;
-    border: 1px solid #D9E2EF;
-    border-radius: 10px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .home-about-item {
+            background: #FFFFFF;
+            border: 1px solid #D9E2EF;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.home-about-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
+        .home-about-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
 
-.home-about-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #0083c0;
-}
+        .home-about-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #0083c0;
+        }
 
-.home-about-item p {
-    font-size: 1em;
-    color: #6C757D;
-}
+        .home-about-item p {
+            font-size: 1em;
+            color: #6C757D;
+        }
 
 
         /* Services Section */
@@ -128,6 +129,7 @@
             text-align: center;
             background: #F9F9F9;
         }
+
     </style>
 </head>
 <body>
@@ -151,7 +153,17 @@
                     </li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </nav>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </header>
 
