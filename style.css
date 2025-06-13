@@ -198,9 +198,12 @@ header {
     padding: 40px 20px; /* Add spacing around the main content */
     border-radius: 10px; /* Rounded corners for a polished look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 1200px; /* Limit the content width */
     font-family: 'Arial', sans-serif; /* Set a clean font */
     color: #333; /* Neutral text color */
+    max-width: 100%; /* full width */
+    background-color: #f4f4f4;
+    min-height: calc(100vh - 140px);
+    
 }
 
 #resources-main h2 {
@@ -213,6 +216,9 @@ header {
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     gap: 20px; /* Space between cards */
     justify-content: center; /* Center cards */
+    padding: 0 40px; /* add padding so it doesn't float too center */
+    max-width: 1200px;
+    margin: auto; /* center container */
 }
 
 .resource-card {
@@ -239,7 +245,7 @@ header {
 .resource-card h3 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #0056b3; /* Primary color for titles */
+    color: #2483c0; /* Primary color for titles */
 }
 
 .resource-card p {
@@ -253,7 +259,7 @@ header {
 }
 
 .resource-card .icon{
-    color: #0056b3; /* Forcefully remove underline */
+    color: #2483c0; /* Forcefully remove underline */
 }
 
 

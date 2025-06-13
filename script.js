@@ -331,3 +331,65 @@ document.addEventListener('click', function(event) {
         hamburger.classList.remove('active');
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.includes("resources-keydates.html")) {
+        fetch("../data.json")
+            .then(res => res.json())
+            .then(data => {
+                const months = data.data;
+                const monthsContainer = document.getElementById("months-container");
+                const keyDatesContainer = document.getElementById("key-dates-container");
+                const backButtonContainer = document.getElementById("back-button-container");
+                const backButton = document.getElementById("back-button");
+
+                months.forEach(month => {
+                    const monthCard = document.createElement("div");
+                    monthCard.className = "month-card";
+                    monthCard.textContent = month.month;
+                    monthCard.addEventListener("click", () => {
+                        renderKeyDates(month);
+                        monthsContainer.style.display = "none";
+                        keyDatesContainer.style.display = "block";
+                        backButtonContainer.style.display = "block";
+                    });
+                    monthsContainer.appendChild(monthCard);
+                });
+
+                backButton.addEventListener("click", () => {
+                    keyDatesContainer.innerHTML = "";
+                    monthsContainer.style.display = "flex";
+                    keyDatesContainer.style.display = "none";
+                    backButtonContainer.style.display = "none";
+                });
+
+                function renderKeyDates(month) {
+                    const title = `<h3>${month.month}</h3>`;
+                    const tableStart = `
+                        <table class="key-dates-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+                    const rows = month.key_dates.map(item => `
+                        <tr>
+                            <td>${item.date}</td>
+                            <td>${item.category}</td>
+                            <td>${item.description}</td>
+                        </tr>
+                    `).join('');
+                    const tableEnd = `
+                            </tbody>
+                        </table>
+                    `;
+                    keyDatesContainer.innerHTML = title + tableStart + rows + tableEnd;
+                }
+            })
+            .catch(err => console.error("Error loading key dates:", err));
+    }
+});
