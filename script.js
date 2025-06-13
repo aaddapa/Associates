@@ -344,52 +344,70 @@ document.addEventListener("DOMContentLoaded", () => {
                 const backButton = document.getElementById("back-button");
 
                 months.forEach(month => {
-                    const monthCard = document.createElement("div");
-                    monthCard.className = "month-card";
-                    monthCard.textContent = month.month;
-                    monthCard.addEventListener("click", () => {
+                    const card = document.createElement("div");
+                    card.className = "month-card cue";
+
+                    const label = document.createElement("div");
+                    label.textContent = month.month.slice(0, 3).toUpperCase();
+                    card.appendChild(label);
+
+                    card.addEventListener("click", () => {
                         renderKeyDates(month);
                         monthsContainer.style.display = "none";
                         keyDatesContainer.style.display = "block";
                         backButtonContainer.style.display = "block";
+                        document.getElementById("month-header").style.display = "none";
+
                     });
-                    monthsContainer.appendChild(monthCard);
+
+                    monthsContainer.appendChild(card);
                 });
 
                 backButton.addEventListener("click", () => {
                     keyDatesContainer.innerHTML = "";
-                    monthsContainer.style.display = "flex";
+                    monthsContainer.style.display = "grid";
                     keyDatesContainer.style.display = "none";
                     backButtonContainer.style.display = "none";
+                    document.getElementById("month-header").style.display = "block"; 
                 });
 
-                function renderKeyDates(month) {
-                    const title = `<h3>${month.month}</h3>`;
-                    const tableStart = `
-                        <table class="key-dates-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
-                    const rows = month.key_dates.map(item => `
-                        <tr>
-                            <td>${item.date}</td>
-                            <td>${item.category}</td>
-                            <td>${item.description}</td>
-                        </tr>
-                    `).join('');
-                    const tableEnd = `
-                            </tbody>
-                        </table>
-                    `;
-                    keyDatesContainer.innerHTML = title + tableStart + rows + tableEnd;
-                }
+function renderKeyDates(month) {
+    const title = `<h3>${month.month}</h3>`;
+
+    if (!month.key_dates || month.key_dates.length === 0) {
+        keyDatesContainer.innerHTML = `
+            ${title}
+            <p style="text-align: center; margin-top: 20px; font-style: italic; color: #666;">
+                There are no key dates for this month at the moment. Please check back later.
+            </p>
+        `;
+        return;
+    }
+
+    const tableStart = `
+        <table class="key-dates-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    const rows = month.key_dates.map(item => `
+        <tr>
+            <td>${item.date}</td>
+            <td>${item.category}</td>
+            <td>${item.description}</td>
+        </tr>
+    `).join('');
+    const tableEnd = `</tbody></table>`;
+    keyDatesContainer.innerHTML = title + tableStart + rows + tableEnd;
+}
+
             })
             .catch(err => console.error("Error loading key dates:", err));
     }
 });
+

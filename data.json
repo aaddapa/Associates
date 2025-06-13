@@ -858,6 +858,14 @@
                 "description": "<ul><li>1st instalment (June balance date)</li><li>2nd instalment (February balance date)</li><li>3rd instalment (October balance date)</li></ul>"
               }
             ]
+          },
+          {
+            "id": "december-2025",
+            "month": "December 2025",
+            "notes": "",
+            "current": false,
+            "key_dates": []
           }
+
     ]
     }

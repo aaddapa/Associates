@@ -1,4 +1,10 @@
 /* Body Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
     background-color: #f4f4f4; /* Light gray background */
     font-family: Arial, sans-serif; /* Optional: Set a font */
@@ -9,7 +15,6 @@ body {
     display: flex;
     flex-direction: column; /* Stack header, main, and footer vertically */
     min-height: 100vh; /* Ensure body fills the full viewport height */
-    margin: 0; /* Remove default body margin */
 }
 
 /* General Header Styling */
@@ -352,29 +357,54 @@ iframe {
     margin-top: 30px; /* Add more space above the map */
 }
 
-.months-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 .month-card {
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    font-size: 16px;
+    font-weight: 500;
+    color: #0056b3;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    width: 150px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.month-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+.months-container {
+    display: grid;
+    grid-template-columns: auto auto auto; /* keep this */
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
 }
+
+.month-card.cue {
+    width: clamp(50px, 15vw, 100px);   /* responsive */
+    height: clamp(50px, 15vw, 100px);  /* responsive */
+    background: linear-gradient(to bottom right, #c2e7f9, #87c7eb);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+.month-card.cue:hover {
+    transform: translateY(-4px);
+}
+
+
+.month-card.cue:hover {
+    transform: translateY(-4px);
+}
+
+
 
 .key-dates-container {
     margin-top: 30px;
@@ -384,20 +414,30 @@ iframe {
     border-radius: 8px;
 }
 
-.back-button {
-    padding: 10px 20px;
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+/* Key Dates Table */
+.key-dates-container h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0083c0;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0083c0;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-    background-color: #0069d9;
+    background-color: #89CFF0;
 }
 
 button {
@@ -419,25 +459,22 @@ button:hover {
 .key-dates-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    text-align: left;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.key-dates-table th, .key-dates-table td {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
+.key-dates-table th,
+.key-dates-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
 }
 
 .key-dates-table th {
-    background-color: #0056b3;
-    color: #fff;
-    font-weight: bold;
-    text-align: left;
+    background-color: #0083c0;
+    color: white;
+    font-weight: 600;
 }
 
 .key-dates-table tr:nth-child(even) {
@@ -476,7 +513,7 @@ button:hover {
 
 .calculator-card i {
     font-size: 2.5em; /* Slightly larger for better distinction */
-    color: #0056b3;
+    color: #0083c0;
     margin-bottom: 10px;
 }
 
@@ -863,6 +900,8 @@ button:hover {
     background-color: #e8f1fa;
     border-radius: 10px;
 }
+
+
 
 
 /* Footer Styling */
