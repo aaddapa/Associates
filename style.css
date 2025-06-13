@@ -1,9 +1,4 @@
 /* Body Styling */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
     background-color: #f4f4f4; /* Light gray background */
