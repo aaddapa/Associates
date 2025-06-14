@@ -337,7 +337,7 @@ document.addEventListener('click', function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.pathname.includes("resources-keydates.html")) {
+    if (window.location.pathname.includes("resources-keydates")) {
         fetch("../data.json")
             .then(res => res.json())
             .then(data => {
