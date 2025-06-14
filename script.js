@@ -316,6 +316,10 @@
 //     document.getElementById("loan-results").style.display = "block";
 // });
 
+window.onload = function () {
+  console.log("Page fully loaded");
+};
+
 function toggleMenu() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
