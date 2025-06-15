@@ -7,6 +7,11 @@ html, body {
   overflow-x: hidden;
 }
 
+ input,
+select,
+textarea {
+  font-size: 16px !important;  /* Prevents mobile zoom-in */
+}
 /* Body Styling */
 
 body {
@@ -493,7 +498,10 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-    margin-top: 30px;
+    margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
     padding: 0 20px;
 }
 
@@ -534,6 +542,18 @@ button:hover {
 .calculator-section h2{
     color: #0056b3;
 }
+
+.calculator-wrapper {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 .tax-details {
     margin-bottom: 20px;
 }
@@ -863,6 +883,7 @@ color: #0056b3;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
     margin: 20px auto; 
 }
 
@@ -925,7 +946,16 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+/* Override individual calculator-specific borders */
+#savings-calculator,
+#basic-loan-repayment-calculator {
+    border: none; /* Remove their specific border to avoid duplication */
+}
 
+/* Optional: maintain calculator-section fade-in and heading color */
+.calculator-section h2 {
+    color: #0056b3;
+}
 @media (max-width: 480px) {
   .month-card.cue {
     font-size: 14px;
@@ -955,5 +985,27 @@ input[type="number"] {
 
   body {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loan-options {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .calculator-card h3 {
+    font-size: 14px;
+  }
+
+  .calculator-card i {
+    font-size: 2em;
+  }
+
+  .calculators-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 10px;
   }
 }

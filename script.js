@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".calculator-section").forEach(section => section.style.display = "none");
             document.getElementById("financial-calculators-title")?.style.setProperty("display", "block");
             document.getElementById("calculators-container")?.style.removeProperty("display");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     });
 
@@ -129,86 +130,116 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Savings Calculator
-    safeAddListener("calculate-savings", "click", () => {
-        const savingTerm = parseInt(document.getElementById("savings-term")?.value);
-        const initialAmount = parseFloat(document.getElementById("savings-initial-amount")?.value) || 0;
-        const depositAmount = parseFloat(document.getElementById("savings-deposit-amount")?.value) || 0;
-        const depositFrequency = document.getElementById("savings-deposit-frequency")?.value;
-        const annualInterestRate = parseFloat(document.getElementById("savings-interest-rate")?.value) / 100 || 0;
+safeAddListener("calculate-savings", "click", () => {
+    const savingTerm = parseInt(document.getElementById("savings-term")?.value);
+    const initialAmount = parseFloat(document.getElementById("savings-initial-amount")?.value);
+    const depositAmount = parseFloat(document.getElementById("savings-deposit-amount")?.value);
+    const depositFrequency = document.getElementById("savings-deposit-frequency")?.value;
+    const annualInterestRate = parseFloat(document.getElementById("savings-interest-rate")?.value);
 
-        const frequencyMultiplier = {
-            weekly: 52,
-            fortnightly: 26,
-            monthly: 12,
-            annually: 1
-        };
+    // ❗️Validation
+    if (
+        isNaN(savingTerm) || savingTerm <= 0 ||
+        isNaN(initialAmount) || initialAmount < 0 ||
+        isNaN(depositAmount) || depositAmount < 0 ||
+        !depositFrequency ||
+        isNaN(annualInterestRate) || annualInterestRate < 0
+    ) {
+        alert("Please fill in all required fields with valid values.");
+        return;
+    }
 
-        const periodsPerYear = frequencyMultiplier[depositFrequency];
-        if (!savingTerm || !periodsPerYear) return;
+    const frequencyMultiplier = {
+        weekly: 52,
+        fortnightly: 26,
+        monthly: 12,
+        annually: 1
+    };
 
-        const periods = savingTerm * periodsPerYear;
-        const periodicRate = annualInterestRate / periodsPerYear;
-        const futureValueInitial = initialAmount * Math.pow(1 + periodicRate, periods);
-        const futureValueDeposits = depositAmount * ((Math.pow(1 + periodicRate, periods) - 1) / periodicRate);
+    const periodsPerYear = frequencyMultiplier[depositFrequency];
+    const periods = savingTerm * periodsPerYear;
+    const periodicRate = annualInterestRate / 100 / periodsPerYear;
 
-        const totalSavings = futureValueInitial + futureValueDeposits;
-        const totalDeposited = initialAmount + depositAmount * periods;
-        const totalInterest = totalSavings - totalDeposited;
+    const futureValueInitial = initialAmount * Math.pow(1 + periodicRate, periods);
+    const futureValueDeposits =
+        depositAmount * ((Math.pow(1 + periodicRate, periods) - 1) / periodicRate);
+    const totalSavings = futureValueInitial + futureValueDeposits;
+    const totalDeposited = initialAmount + depositAmount * periods;
+    const totalInterest = totalSavings - totalDeposited;
 
-        document.getElementById("total-amount").textContent = `$${totalSavings.toFixed(2)}`;
-        document.getElementById("total-deposited").textContent = `$${totalDeposited.toFixed(2)}`;
-        document.getElementById("savings-total-interest").textContent = `$${totalInterest.toFixed(2)}`;
+    document.getElementById("total-amount").textContent = `$${totalSavings.toFixed(2)}`;
+    document.getElementById("total-deposited").textContent = `$${totalDeposited.toFixed(2)}`;
+    document.getElementById("savings-total-interest").textContent = `$${totalInterest.toFixed(2)}`;
 
-        document.getElementById("savings-results").style.display = "block";
-    });
+    document.getElementById("savings-results").style.display = "block";
+});
+
 
     // Loan Comparison Calculator
-    safeAddListener("calculate-loans", "click", () => {
-        const loanAmount = parseFloat(document.getElementById("loan-amount")?.value);
-        const frequencyMultiplier = {
-            weekly: 52,
-            fortnightly: 26,
-            monthly: 12
-        };
+safeAddListener("calculate-loans", "click", () => {
+    const loanAmount = parseFloat(document.getElementById("loan-amount")?.value);
 
-        const calculatePayment = (principal, annualRate, termYears, frequency) => {
-            const periodsPerYear = frequencyMultiplier[frequency];
-            const totalPeriods = termYears * periodsPerYear;
-            const periodicRate = annualRate / 100 / periodsPerYear;
-            return periodicRate === 0 ? principal / totalPeriods :
-                (principal * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) /
-                (Math.pow(1 + periodicRate, totalPeriods) - 1);
-        };
+    const loanATerm = parseInt(document.getElementById("loan-a-term")?.value);
+    const loanARate = parseFloat(document.getElementById("loan-a-rate")?.value);
+    const loanAFrequency = document.getElementById("loan-a-frequency")?.value;
 
-        const calculateTotalCost = (payment, term, frequency) => payment * term * frequencyMultiplier[frequency];
+    const loanBTerm = parseInt(document.getElementById("loan-b-term")?.value);
+    const loanBRate = parseFloat(document.getElementById("loan-b-rate")?.value);
+    const loanBFrequency = document.getElementById("loan-b-frequency")?.value;
 
-        const loanATerm = parseInt(document.getElementById("loan-a-term")?.value);
-        const loanARate = parseFloat(document.getElementById("loan-a-rate")?.value);
-        const loanAFrequency = document.getElementById("loan-a-frequency")?.value;
+    // ✅ Full validation
+    if (
+        isNaN(loanAmount) || loanAmount <= 0 ||
+        isNaN(loanATerm) || loanATerm <= 0 ||
+        isNaN(loanARate) || loanARate < 0 ||
+        !loanAFrequency ||
+        isNaN(loanBTerm) || loanBTerm <= 0 ||
+        isNaN(loanBRate) || loanBRate < 0 ||
+        !loanBFrequency
+    ) {
+        alert("Please fill in all loan details correctly before calculating.");
+        return;
+    }
 
-        const loanBTerm = parseInt(document.getElementById("loan-b-term")?.value);
-        const loanBRate = parseFloat(document.getElementById("loan-b-rate")?.value);
-        const loanBFrequency = document.getElementById("loan-b-frequency")?.value;
+    const frequencyMultiplier = {
+        weekly: 52,
+        fortnightly: 26,
+        monthly: 12
+    };
 
-        if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(loanARate) || isNaN(loanBRate)) return;
+    const calculatePayment = (principal, annualRate, termYears, frequency) => {
+        const periodsPerYear = frequencyMultiplier[frequency];
+        const totalPeriods = termYears * periodsPerYear;
+        const periodicRate = annualRate / 100 / periodsPerYear;
 
-        const loanAPayment = calculatePayment(loanAmount, loanARate, loanATerm, loanAFrequency);
-        const loanATotal = calculateTotalCost(loanAPayment, loanATerm, loanAFrequency);
+        return periodicRate === 0
+            ? principal / totalPeriods
+            : (principal * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) /
+              (Math.pow(1 + periodicRate, totalPeriods) - 1);
+    };
 
-        const loanBPayment = calculatePayment(loanAmount, loanBRate, loanBTerm, loanBFrequency);
-        const loanBTotal = calculateTotalCost(loanBPayment, loanBTerm, loanBFrequency);
+    const calculateTotalCost = (payment, term, frequency) =>
+        payment * term * frequencyMultiplier[frequency];
 
-        document.getElementById("loan-a-periodic").textContent = `$${loanAPayment.toFixed(2)}`;
-        document.getElementById("loan-a-total").textContent = `$${loanATotal.toFixed(2)}`;
-        document.getElementById("loan-b-periodic").textContent = `$${loanBPayment.toFixed(2)}`;
-        document.getElementById("loan-b-total").textContent = `$${loanBTotal.toFixed(2)}`;
+    const loanAPayment = calculatePayment(loanAmount, loanARate, loanATerm, loanAFrequency);
+    const loanATotal = calculateTotalCost(loanAPayment, loanATerm, loanAFrequency);
 
-        const savings = Math.abs(loanATotal - loanBTotal).toFixed(2);
-        const cheaper = loanATotal < loanBTotal ? "Loan A" : "Loan B";
-        document.getElementById("loan-summary").textContent = `${cheaper} will save you $${savings} over the other loan.`;
+    const loanBPayment = calculatePayment(loanAmount, loanBRate, loanBTerm, loanBFrequency);
+    const loanBTotal = calculateTotalCost(loanBPayment, loanBTerm, loanBFrequency);
 
-        document.getElementById("loan-results").style.display = "block";
-    });
+    document.getElementById("loan-a-periodic").textContent = `$${loanAPayment.toFixed(2)}`;
+    document.getElementById("loan-a-total").textContent = `$${loanATotal.toFixed(2)}`;
+    document.getElementById("loan-b-periodic").textContent = `$${loanBPayment.toFixed(2)}`;
+    document.getElementById("loan-b-total").textContent = `$${loanBTotal.toFixed(2)}`;
+
+    const savings = Math.abs(loanATotal - loanBTotal).toFixed(2);
+    const cheaper = loanATotal < loanBTotal ? "Loan A" : "Loan B";
+    document.getElementById("loan-summary").textContent =
+        `${cheaper} will save you $${savings} over the other loan.`;
+
+    document.getElementById("loan-results").style.display = "block";
+});
+
 });
 
 
