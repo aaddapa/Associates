@@ -1,324 +1,217 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Event listener for cue cards
-//     document.querySelectorAll(".calculator-card").forEach(card => {
-//         card.addEventListener("click", () => {
-//             const calculatorId = card.getAttribute("data-calculator"); // Get the calculator ID
-//             console.log("Opening calculator:", calculatorId);
+// Unified script with safe event listeners for all calculators
+document.addEventListener("DOMContentLoaded", () => {
+    const safeAddListener = (id, event, handler) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener(event, handler);
+    };
 
-//             // Hide all cue cards and calculator sections
-//             document.getElementById("financial-calculators-title").style.display = "none";
+    // Cue card navigation
+    document.querySelectorAll(".calculator-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const calculatorId = card.getAttribute("data-calculator");
+            console.log("Opening calculator:", calculatorId);
 
-//             document.getElementById("calculators-container").style.display = "none";
-//             document.querySelectorAll(".calculator-section").forEach(section => {
-//                 section.style.display = "none";
-//             });
+            document.getElementById("financial-calculators-title")?.style.setProperty("display", "none");
+            document.getElementById("calculators-container")?.style.setProperty("display", "none");
+            document.querySelectorAll(".calculator-section").forEach(section => section.style.display = "none");
 
-//             // Show the selected calculator
-//             const selectedCalculator = document.getElementById(calculatorId);
-//             if (selectedCalculator) {
-//                 selectedCalculator.style.display = "block";
-//             } else {
-//                 console.error(`Calculator with id "${calculatorId}" not found.`);
-//             }
-//         });
-//     });
+            const selectedCalculator = document.getElementById(calculatorId);
+            if (selectedCalculator) {
+                selectedCalculator.style.display = "block";
+            } else {
+                console.error(`Calculator with id "${calculatorId}" not found.`);
+            }
+        });
+    });
 
-//     // Event listener for "Back to Calculators" buttons
-//     document.querySelectorAll(".back-to-calculators").forEach(button => {
-//         button.addEventListener("click", () => {
-//             // Hide all calculators
-//             document.querySelectorAll(".calculator-section").forEach(section => {
-//                 section.style.display = "none";
-//             });
+    document.querySelectorAll(".back-to-calculators").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".calculator-section").forEach(section => section.style.display = "none");
+            document.getElementById("financial-calculators-title")?.style.setProperty("display", "block");
+            document.getElementById("calculators-container")?.style.removeProperty("display");
+        });
+    });
 
-//             // Show the cue cards
-//             document.getElementById("financial-calculators-title").style.display = "block";
+    // Tax Calculator
+    safeAddListener("calculate-tax", "click", () => {
+        const income = parseFloat(document.getElementById("income")?.value);
+        const taxBrackets = {
+            2024: [
+                { upper: 14000, rate: 0.105 },
+                { upper: 15600, rate: 0.1282 },
+                { upper: 48000, rate: 0.175 },
+                { upper: 53500, rate: 0.2164 },
+                { upper: 70000, rate: 0.30 },
+                { upper: 78100, rate: 0.3099 },
+                { upper: 180000, rate: 0.33 },
+                { upper: Infinity, rate: 0.39 }
+            ]
+        };
+        const accLevyRate = 0.016;
+        const year = "2024";
+        const brackets = taxBrackets[year];
 
-//             document.getElementById("calculators-container").style.display = "flex";
-//         });
-//     });
+        if (isNaN(income) || income <= 0) {
+            alert("Please enter a valid income.");
+            return;
+        }
 
-//   // Tax brackets
-//   const taxBrackets = {
-//     2024: [
-//         { upper: 14000, rate: 0.105 },
-//         { upper: 15600, rate: 0.1282 },
-//         { upper: 48000, rate: 0.175 },
-//         { upper: 53500, rate: 0.2164 },
-//         { upper: 70000, rate: 0.30 },
-//         { upper: 78100, rate: 0.3099 },
-//         { upper: 180000, rate: 0.33 },
-//         { upper: Infinity, rate: 0.39 }
-//     ]
-// };
+        let totalTax = 0;
+        let remainingIncome = income;
+        const breakdown = [];
 
-// // ACC Earners' Levy rate
-// const accLevyRate = 0.016; // 1.6%
+        for (let i = 0; i < brackets.length; i++) {
+            const { upper, rate } = brackets[i];
+            const lower = brackets[i - 1]?.upper || 0;
+            const taxableAmount = Math.min(remainingIncome, upper - lower);
 
-// // Calculate tax logic
+            if (taxableAmount > 0) {
+                const tax = taxableAmount * rate;
+                breakdown.push({
+                    bracket: `$${taxableAmount.toFixed(0)}`,
+                    rate: `${(rate * 100).toFixed(2)}%`,
+                    tax: `$${tax.toFixed(2)}`
+                });
+                totalTax += tax;
+                remainingIncome -= taxableAmount;
+                if (remainingIncome <= 0) break;
+            }
+        }
 
-// document.getElementById("calculate-tax").addEventListener("click", () => {
-//     const income = parseFloat(document.getElementById("income").value);
-//     const year = "2024"; // Fixed for now
-//     const brackets = taxBrackets[year];
+        const accLevy = income * accLevyRate;
+        const netIncome = income - totalTax - accLevy;
 
-//     if (isNaN(income) || income <= 0) {
-//         alert("Please enter a valid income.");
-//         return;
-//     }
+        const resultsTable = document.querySelector("#tax-breakdown tbody");
+        if (resultsTable) {
+            resultsTable.innerHTML = breakdown.map(row => `
+                <tr><td>${row.bracket}</td><td>${row.rate}</td><td>${row.tax}</td></tr>`).join("");
+        }
 
-//     let totalTax = 0;
-//     let remainingIncome = income;
-//     const breakdown = [];
+        document.getElementById("total-tax").textContent = `$${totalTax.toFixed(2)}`;
+        document.getElementById("acc-levy").textContent = `$${accLevy.toFixed(2)}`;
+        document.getElementById("net-income").textContent = `$${netIncome.toFixed(2)}`;
+        document.getElementById("net-month").textContent = `$${(netIncome / 12).toFixed(2)}`;
+        document.getElementById("net-fortnight").textContent = `$${(netIncome / 26).toFixed(2)}`;
+        document.getElementById("net-week").textContent = `$${(netIncome / 52).toFixed(2)}`;
 
-//     // Calculate tax per bracket
-//     for (let i = 0; i < brackets.length; i++) {
-//         const { upper, rate } = brackets[i];
-//         const lower = brackets[i - 1]?.upper || 0; // Lower bound of the bracket
-//         const taxableAmount = Math.min(remainingIncome, upper - lower);
+        document.querySelector(".results").style.display = "block";
+    });
 
-//         if (taxableAmount > 0) {
-//             const tax = taxableAmount * rate;
+    // Borrow Calculator
+    safeAddListener("calculate-borrow", "click", () => {
+        const loanTerm = parseFloat(document.getElementById("loan-term")?.value);
+        const interestRate = parseFloat(document.getElementById("interest-rate")?.value) / 100;
+        const grossIncome1 = parseFloat(document.getElementById("gross-income-1")?.value) || 0;
 
-//             breakdown.push({
-//                 bracket: `$${taxableAmount.toFixed(0)}`, // Only the exact amount is displayed
-//                 rate: `${(rate * 100).toFixed(2)}%`,
-//                 tax: `$${tax.toFixed(2)}`
-//             });
+        if (!loanTerm || !interestRate || !grossIncome1) {
+            alert("Please fill in all required fields with valid values.");
+            return;
+        }
 
-//             totalTax += tax;
-//             remainingIncome -= taxableAmount;
+        const multiplier = 11.14;
+        const borrowingCapacity = (grossIncome1 * multiplier) / interestRate;
+        const monthlyRate = interestRate / 12;
+        const totalPayments = loanTerm * 12;
+        const monthlyRepayment =
+            borrowingCapacity *
+            (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
+            (Math.pow(1 + monthlyRate, totalPayments) - 1);
 
-//             if (remainingIncome <= 0) break;
-//         }
-//     }
+        const totalInterest = monthlyRepayment * totalPayments - borrowingCapacity;
 
-//     // Calculate ACC Earners' Levy
-//     const accLevy = income * accLevyRate;
+        document.getElementById("borrow-amount").textContent = `$${borrowingCapacity.toFixed(2)}`;
+        document.getElementById("monthly-repayment").textContent = `$${monthlyRepayment.toFixed(2)}`;
+        document.getElementById("total-interest").textContent = `$${totalInterest.toFixed(2)}`;
+        document.getElementById("fortnightly-repayment").textContent = `$${(monthlyRepayment / 2).toFixed(2)}`;
+        document.getElementById("weekly-repayment").textContent = `$${(monthlyRepayment / 4.33).toFixed(2)}`;
 
-//     // Calculate Net Income
-//     const netIncome = income - totalTax - accLevy;
+        document.getElementById("borrow-results").style.display = "block";
+    });
 
-//     // Calculate Net Income per Month, Fortnight, and Week
-//     const netIncomePerMonth = netIncome / 12;
-//     const netIncomePerFortnight = netIncome / 26;
-//     const netIncomePerWeek = netIncome / 52;
+    // Savings Calculator
+    safeAddListener("calculate-savings", "click", () => {
+        const savingTerm = parseInt(document.getElementById("savings-term")?.value);
+        const initialAmount = parseFloat(document.getElementById("savings-initial-amount")?.value) || 0;
+        const depositAmount = parseFloat(document.getElementById("savings-deposit-amount")?.value) || 0;
+        const depositFrequency = document.getElementById("savings-deposit-frequency")?.value;
+        const annualInterestRate = parseFloat(document.getElementById("savings-interest-rate")?.value) / 100 || 0;
 
-//     // Populate Results Table
-//     const resultsTable = document.querySelector("#tax-breakdown tbody");
-//     resultsTable.innerHTML = breakdown
-//         .map(row => `<tr><td>${row.bracket}</td><td>${row.rate}</td><td>${row.tax}</td></tr>`)
-//         .join("");
+        const frequencyMultiplier = {
+            weekly: 52,
+            fortnightly: 26,
+            monthly: 12,
+            annually: 1
+        };
 
-//     // Update totals
-//     document.getElementById("total-tax").textContent = `$${totalTax.toFixed(2)}`;
-//     document.getElementById("acc-levy").textContent = `$${accLevy.toFixed(2)}`;
-//     document.getElementById("net-income").textContent = `$${netIncome.toFixed(2)}`;
-//     document.getElementById("net-month").textContent = `$${netIncomePerMonth.toFixed(2)}`;
-//     document.getElementById("net-fortnight").textContent = `$${netIncomePerFortnight.toFixed(2)}`;
-//     document.getElementById("net-week").textContent = `$${netIncomePerWeek.toFixed(2)}`;
+        const periodsPerYear = frequencyMultiplier[depositFrequency];
+        if (!savingTerm || !periodsPerYear) return;
 
-//     // Show results section
-//     document.querySelector(".results").style.display = "block";
-// });
-// });
+        const periods = savingTerm * periodsPerYear;
+        const periodicRate = annualInterestRate / periodsPerYear;
+        const futureValueInitial = initialAmount * Math.pow(1 + periodicRate, periods);
+        const futureValueDeposits = depositAmount * ((Math.pow(1 + periodicRate, periods) - 1) / periodicRate);
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Event listener for "Calculate" button
-//     document.getElementById("calculate-borrow").addEventListener("click", () => {
-//         // Get input values
-//         const loanTerm = parseFloat(document.getElementById("loan-term").value); // in years
-//         const interestRate = parseFloat(document.getElementById("interest-rate").value) / 100; // Convert to decimal
-//         const grossIncome1 = parseFloat(document.getElementById("gross-income-1").value) || 0; // Annual income
+        const totalSavings = futureValueInitial + futureValueDeposits;
+        const totalDeposited = initialAmount + depositAmount * periods;
+        const totalInterest = totalSavings - totalDeposited;
 
-//         if (!loanTerm || !interestRate || !grossIncome1) {
-//             alert("Please fill in all required fields with valid values.");
-//             return;
-//         }
+        document.getElementById("total-amount").textContent = `$${totalSavings.toFixed(2)}`;
+        document.getElementById("total-deposited").textContent = `$${totalDeposited.toFixed(2)}`;
+        document.getElementById("savings-total-interest").textContent = `$${totalInterest.toFixed(2)}`;
 
-//         // Borrowing Capacity
-//         const multiplier = 11.14; // Multiplier for a 30-year loan
-//         const borrowingCapacity = (grossIncome1 * multiplier) / interestRate;
+        document.getElementById("savings-results").style.display = "block";
+    });
 
-//         // Monthly Repayment Calculation
-//         const monthlyRate = interestRate / 12; // Monthly interest rate
-//         const totalPayments = loanTerm * 12; // Total number of payments (in months)
-//         const monthlyRepayment =
-//             borrowingCapacity *
-//             (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
-//             (Math.pow(1 + monthlyRate, totalPayments) - 1);
+    // Loan Comparison Calculator
+    safeAddListener("calculate-loans", "click", () => {
+        const loanAmount = parseFloat(document.getElementById("loan-amount")?.value);
+        const frequencyMultiplier = {
+            weekly: 52,
+            fortnightly: 26,
+            monthly: 12
+        };
 
-//         // Total Interest Payable
-//         const totalInterest = monthlyRepayment * totalPayments - borrowingCapacity;
+        const calculatePayment = (principal, annualRate, termYears, frequency) => {
+            const periodsPerYear = frequencyMultiplier[frequency];
+            const totalPeriods = termYears * periodsPerYear;
+            const periodicRate = annualRate / 100 / periodsPerYear;
+            return periodicRate === 0 ? principal / totalPeriods :
+                (principal * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) /
+                (Math.pow(1 + periodicRate, totalPeriods) - 1);
+        };
 
-//         // Fortnightly and Weekly Repayments
-//         const fortnightlyRepayment = monthlyRepayment / 2;
-//         const weeklyRepayment = monthlyRepayment / 4.33;
+        const calculateTotalCost = (payment, term, frequency) => payment * term * frequencyMultiplier[frequency];
 
-//         // Display Results
-//         document.getElementById("borrow-amount").textContent = `$${borrowingCapacity.toFixed(2)}`;
-//         document.getElementById("monthly-repayment").textContent = `$${monthlyRepayment.toFixed(2)}`;
-//         document.getElementById("total-interest").textContent = `$${totalInterest.toFixed(2)}`;
-//         document.getElementById("fortnightly-repayment").textContent = `$${fortnightlyRepayment.toFixed(2)}`;
-//         document.getElementById("weekly-repayment").textContent = `$${weeklyRepayment.toFixed(2)}`;
+        const loanATerm = parseInt(document.getElementById("loan-a-term")?.value);
+        const loanARate = parseFloat(document.getElementById("loan-a-rate")?.value);
+        const loanAFrequency = document.getElementById("loan-a-frequency")?.value;
 
-//         // Show the results section
-//         document.getElementById("borrow-results").style.display = "block";
-//     });
+        const loanBTerm = parseInt(document.getElementById("loan-b-term")?.value);
+        const loanBRate = parseFloat(document.getElementById("loan-b-rate")?.value);
+        const loanBFrequency = document.getElementById("loan-b-frequency")?.value;
 
-//     // Event listener for "Back to Calculators" button
-//     document.querySelector(".back-to-calculators").addEventListener("click", () => {
-//         // Hide the current calculator and results
-//         document.querySelector("#borrow-calculator").style.display = "none";
-//         document.querySelector("#borrow-results").style.display = "none";
+        if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(loanARate) || isNaN(loanBRate)) return;
 
-//         // Show the calculator cards
-//         document.getElementById("calculators-container").style.display = "flex";
-//         document.getElementById("financial-calculators-title").style.display = "block";
-//     });
-// });
+        const loanAPayment = calculatePayment(loanAmount, loanARate, loanATerm, loanAFrequency);
+        const loanATotal = calculateTotalCost(loanAPayment, loanATerm, loanAFrequency);
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Event listener for "Calculate" button
-//     document.getElementById("calculate-savings").addEventListener("click", () => {
-//         // Get input values for the Savings Calculator
-//         const savingTerm = parseInt(document.getElementById("savings-term").value); // in years
-//         const initialAmount = parseFloat(document.getElementById("savings-initial-amount").value) || 0;
-//         const depositAmount = parseFloat(document.getElementById("savings-deposit-amount").value) || 0;
-//         const depositFrequency = document.getElementById("savings-deposit-frequency").value;
-//         const annualInterestRate = parseFloat(document.getElementById("savings-interest-rate").value) / 100 || 0;
+        const loanBPayment = calculatePayment(loanAmount, loanBRate, loanBTerm, loanBFrequency);
+        const loanBTotal = calculateTotalCost(loanBPayment, loanBTerm, loanBFrequency);
 
-//         // Validate inputs
-//         if (isNaN(savingTerm) || savingTerm <= 0) {
-//             alert("Please enter a valid saving term.");
-//             return;
-//         }
-//         if (isNaN(initialAmount) || initialAmount < 0) {
-//             alert("Please enter a valid initial amount.");
-//             return;
-//         }
-//         if (isNaN(depositAmount) || depositAmount < 0) {
-//             alert("Please enter a valid deposit amount.");
-//             return;
-//         }
-//         if (isNaN(annualInterestRate) || annualInterestRate < 0) {
-//             alert("Please enter a valid interest rate.");
-//             return;
-//         }
+        document.getElementById("loan-a-periodic").textContent = `$${loanAPayment.toFixed(2)}`;
+        document.getElementById("loan-a-total").textContent = `$${loanATotal.toFixed(2)}`;
+        document.getElementById("loan-b-periodic").textContent = `$${loanBPayment.toFixed(2)}`;
+        document.getElementById("loan-b-total").textContent = `$${loanBTotal.toFixed(2)}`;
 
-//         // Frequency multipliers
-//         const frequencyMultiplier = {
-//             weekly: 52,
-//             fortnightly: 26,
-//             monthly: 12,
-//             annually: 1,
-//         };
+        const savings = Math.abs(loanATotal - loanBTotal).toFixed(2);
+        const cheaper = loanATotal < loanBTotal ? "Loan A" : "Loan B";
+        document.getElementById("loan-summary").textContent = `${cheaper} will save you $${savings} over the other loan.`;
 
-//         const periodsPerYear = frequencyMultiplier[depositFrequency];
-//         if (!periodsPerYear) {
-//             alert("Please select a valid deposit frequency.");
-//             return;
-//         }
+        document.getElementById("loan-results").style.display = "block";
+    });
+});
 
-//         const periods = savingTerm * periodsPerYear;
-//         const periodicRate = annualInterestRate / periodsPerYear;
 
-//         // Calculate compound interest
-//         let futureValueInitial = initialAmount * Math.pow(1 + periodicRate, periods);
-//         let futureValueDeposits =
-//             depositAmount * ((Math.pow(1 + periodicRate, periods) - 1) / periodicRate);
-//         const totalSavings = futureValueInitial + futureValueDeposits;
-//         const totalDeposited = initialAmount + depositAmount * periods;
-//         const totalInterest = totalSavings - totalDeposited;
-//         console.log(totalInterest)
-
-//         // Update results
-//         document.getElementById("total-amount").textContent = `$${totalSavings.toFixed(2)}`;
-//         document.getElementById("total-deposited").textContent = `$${totalDeposited.toFixed(2)}`;
-//         document.getElementById("savings-total-interest").textContent = `$${totalInterest.toFixed(2)}`;
-
-//         // Show results section
-//         document.getElementById("savings-results").style.display = "block";
-//     });
-// });
-
-// document.getElementById("calculate-loans").addEventListener("click", () => {
-//     // Retrieve loan amount
-//     const loanAmount = parseFloat(document.getElementById("loan-amount").value);
-
-//     // Frequency multiplier (number of payments per year)
-//     const frequencyMultiplier = {
-//         weekly: 52,
-//         fortnightly: 26,
-//         monthly: 12,
-//     };
-
-//     // Function to calculate periodic payments
-//     const calculatePayment = (principal, annualRate, termYears, frequency) => {
-//         const periodsPerYear = frequencyMultiplier[frequency];
-//         const totalPeriods = termYears * periodsPerYear;
-//         const periodicRate = annualRate / 100 / periodsPerYear;
-
-//         if (periodicRate === 0) {
-//             return principal / totalPeriods; // No interest case
-//         }
-
-//         return (
-//             (principal * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) /
-//             (Math.pow(1 + periodicRate, totalPeriods) - 1)
-//         );
-//     };
-
-//     // Function to calculate total loan cost
-//     const calculateTotalCost = (periodicPayment, termYears, frequency) => {
-//         const totalPeriods = termYears * frequencyMultiplier[frequency];
-//         return periodicPayment * totalPeriods;
-//     };
-
-//     // Loan A details
-//     const loanATerm = parseInt(document.getElementById("loan-a-term").value);
-//     const loanARate = parseFloat(document.getElementById("loan-a-rate").value);
-//     const loanAFrequency = document.getElementById("loan-a-frequency").value;
-
-//     // Loan B details
-//     const loanBTerm = parseInt(document.getElementById("loan-b-term").value);
-//     const loanBRate = parseFloat(document.getElementById("loan-b-rate").value);
-//     const loanBFrequency = document.getElementById("loan-b-frequency").value;
-
-//     // Validate inputs
-//     if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(loanARate) || isNaN(loanBRate)) {
-//         alert("Please enter valid values.");
-//         return;
-//     }
-
-//     // Calculate periodic payments and total costs
-//     const loanAPayment = calculatePayment(loanAmount, loanARate, loanATerm, loanAFrequency);
-//     const loanATotal = calculateTotalCost(loanAPayment, loanATerm, loanAFrequency);
-
-//     const loanBPayment = calculatePayment(loanAmount, loanBRate, loanBTerm, loanBFrequency);
-//     const loanBTotal = calculateTotalCost(loanBPayment, loanBTerm, loanBFrequency);
-
-//     // Display results
-//     document.getElementById("loan-a-periodic").textContent = `$${loanAPayment.toFixed(2)}`;
-//     document.getElementById("loan-a-total").textContent = `$${loanATotal.toFixed(2)}`;
-
-//     document.getElementById("loan-b-periodic").textContent = `$${loanBPayment.toFixed(2)}`;
-//     document.getElementById("loan-b-total").textContent = `$${loanBTotal.toFixed(2)}`;
-
-//     // Summary
-//     const savings = Math.abs(loanATotal - loanBTotal).toFixed(2);
-//     const cheaperLoan = loanATotal < loanBTotal ? "Loan A" : "Loan B";
-//     document.getElementById(
-//         "loan-summary"
-//     ).textContent = `${cheaperLoan} will save you $${savings} over the other loan.`;
-
-//     // Show results
-//     document.getElementById("loan-results").style.display = "block";
-// });
-
-window.onload = function () {
-  console.log("Page fully loaded");
-};
 
 function toggleMenu() {
     const hamburger = document.querySelector('.hamburger');
